@@ -117,7 +117,8 @@
             <label class="label">Bot Type</label>
             <div class="select-wrap">
               <select class="select">
-                <option>Select here...</option>
+                <option value="">Select here...</option>
+                <option value="1">test 1</option>
               </select>
             </div>
           </div>
@@ -149,7 +150,7 @@
               <div class="source-middle"><span>Stripe API, XYZ API, +1 more</span></div>
               <div class="source-right"><span><a href="">VIEW ALL</a></span></div>
             </div>
-            <button class="plus open-modal" data-source="Documents" aria-label="Add Documents"><i class="bi bi-plus"></i></button>
+            <button class="plus open-modal" data-source="API" aria-label="Add API"><i class="bi bi-plus"></i></button>
           </div>
           <div class="source-row">
             <div class="divSource">
@@ -157,7 +158,7 @@
               <div class="source-middle"><span>Aenean vulputate eleifend tellus. Aenean leo l...</span></div>
               <div class="source-right"><span><a href="">VIEW ALL</a></span></div>
             </div>
-            <button class="plus open-modal" data-source="Documents" aria-label="Add Documents"><i class="bi bi-plus"></i></button>
+            <button class="plus open-modal" data-source="Text" aria-label="Add Text"><i class="bi bi-plus"></i></button>
           </div>
 
           <div class="actions">
@@ -202,42 +203,11 @@
     </main>
   </div>
 
-  <!-- Modal: always present in DOM, hidden via CSS class -->
+
+<!-- Modal: always present in DOM, content injected dynamically by modal.js -->
   <div class="overlay" id="overlay">
     <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-      <div class="top">
-        <div>
-          <h2 id="modalTitle">Add Documents</h2>
-          <p class="subtitle">If you are uploading a PDF, make sure you can select/highlight the text.</p>
-        </div>
-        <button class="close" id="closeBtn" aria-label="Close"><img src="images/CloseIcon.svg"></button>
-      </div>
-
-      <input id="fileInput" type="file" multiple accept=".pdf,.doc,.docx,.svg,.png,.jpg,.jpeg,.gif" />
-
-      <div class="dropzone" id="dropzone">
-        <div class="drop-inner" id="uploadLink">
-          <div class="icon-wrap" aria-hidden="true">
-            <i><img src="images/upload-icon.svg"/></i>
-          </div>
-          <p class="upload-text"><span class="upload-link">Click to upload</span> or drag and drop</p>
-          <div class="formats">PDF, DOC, DOCX, SVG, PNG, JPG or GIF (max. 800×400px)</div>
-        </div>
-      </div>
-
-      <div class="file-list" id="fileList"></div>
-
-      <div class="progress-wrap" id="progressWrap">
-        <div class="progress-label"><span>Uploading</span><span id="progressPct">0%</span></div>
-        <div class="bar"><span id="progressBar"></span></div>
-      </div>
-
-      <div class="success" id="successMsg">Upload completed successfully.</div>
-
-      <div class="actions">
-        <button class="btn cancel" id="cancelBtn">CANCEL</button>
-        <button class="btn upload" id="uploadBtn">UPLOAD</button>
-      </div>
+      <!-- Content rendered dynamically per source type (Documents / Text / API) -->
     </div>
   </div>
 

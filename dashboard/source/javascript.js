@@ -35,6 +35,21 @@
       });
     }
 
+  const selects = document.querySelectorAll('.select');
+
+  selects.forEach(select => {
+    function updateColor() {
+      if (select.selectedIndex === 0) {
+        select.style.color = '#797B8D'; // first option color
+      } else {
+        select.style.color = '#3d3d3d'; // selected option color
+      }
+    }
+
+    updateColor();
+    select.addEventListener('change', updateColor);
+  });
+
 
 
     // For review page
