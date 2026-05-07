@@ -1,0 +1,418 @@
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      /* background: #f5f6fa; */
+      color: #222;
+      min-height: 100vh;
+      width: 100%;
+    }
+    img.logo {
+      max-width: 135px;
+      display: block;
+      margin-top: 8px;
+      margin-left: -15px;
+    }
+
+
+    .header {
+  width: 100%;
+  padding: 18px 7% 0;
+}
+.header span {
+      color: #6c63ff;
+    }
+
+.container {
+  flex: 1;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 20px 10% 49px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  overflow-x: hidden;
+  position:relative;
+}
+.main-outer{
+  background: url('../images/login-big-bg.svg');
+  background-repeat: no-repeat;
+  /* background-size: cover;
+  background-position: 50%; */
+}
+@media(min-width:1445px){
+  .main-outer{
+    background-size: cover;
+    background-position: 50%;
+  }
+}
+
+    
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 56px;
+    }
+
+
+    .right {
+      /* flex: 0 0 600px;
+      display: flex; */
+      /* justify-content: center; */
+    }
+
+    .card {
+      width: 100%;
+      max-width: 448px;
+      min-width: 448px;
+      min-height: 620px;
+      border-radius: 24px;
+      padding: 49px 48px 50px;
+      margin: 0 auto;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+      position: relative;
+      border-top: 1px solid transparent;
+      background-image: linear-gradient(white, white), linear-gradient(to right, #6038b3 0%, #50c099 100%);
+      /* background-origin: border-box; */
+      background-clip: padding-box, border-box;
+    }
+    
+    .form-top-area {
+        text-align: center;
+    }
+
+
+    .card > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .card h2 {
+      font-size: 24px;
+      margin-bottom: 8px;
+      color: #6750A4;
+      font-weight: bold;
+      line-height: 32px;
+      letter-spacing: -1.2px;
+      margin-top: 12px;
+    }
+
+    .sub {
+      color: #3D3D3D;
+      font-size: 14px;
+      line-height: 20px;
+      
+    }
+
+    form label {
+      display: block;
+      margin: 22px 0 10px;
+      font-weight: 700;
+      color: #3D3D3D;
+      letter-spacing: 0.6px;
+      font-size: 12px;
+      padding-left: 4px;
+
+    }
+
+    .forgot-pwd{
+      float: right;
+      font-size: 12px;
+      line-height: 16px;
+      font-weight: 600;
+      letter-spacing: 0;
+      color: #6038B3;
+      text-decoration: none;
+    }
+
+    .input-box {
+      display: flex;
+      align-items: center;
+      background: #f4f1fa;
+      border: 1px solid #e5e1ef;
+      border-radius: 60px;
+      padding: 0 16px;
+      height: 49px;
+    }
+
+    .input-box i {
+      color: #777;
+      margin-right: 16px;
+    }
+
+    .input-box input {
+      flex: 1;
+      border: none;
+      outline: none;
+      background: transparent;
+      font-size: 1rem;
+      color: #333;
+    }
+
+    .input-box input::placeholder{
+      color:#79747E99;
+      font-size: 16px;
+      line-height: 100%;
+
+    }
+
+    .btn {
+      width: 100%;
+      margin-top: 23px;
+      border: none;
+      border-radius: 9999px;
+      padding: 18px;
+      font-size: 14px;
+      font-weight: bold;
+      color: white;
+      cursor: pointer;
+      background: linear-gradient(90deg, #6038B3, #50C099);
+      transition: transform 0.3s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .divider {
+      margin: 32px 0;
+      text-align: center;
+      font-size: 12px;
+      color: #3D3D3D;
+      position: relative;
+      font-weight: bold;
+      line-height: 16px;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 66px;
+      height: 1px;
+      background: #ddd;
+    }
+
+    .divider::before { left: 0; }
+    .divider::after { right: 0; }
+
+    .socials {
+      /* display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px; */
+      margin-top: 40px;
+    }
+
+    .social {
+      border: 1px solid #CAC4D033;
+      background: #F3F0F5;
+      border-radius: 24px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 46px;
+      color: #3D3D3D;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .github{
+      margin-top: 13px;
+    }
+
+    .social i{
+      display: flex;
+      margin-right: 10px;
+    }
+
+    .login {
+      margin-top: 40px;
+      text-align: center;
+      color: #3D3D3D;
+      font-size: 0.95rem;
+      font-size: 14px;
+      font-weight: 400;
+    }
+
+    .login a {
+      color: #6038B3;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .below-form {
+      border: 1px solid #006B5033;
+      background: #89F7CD1A;
+      border-radius: 24px;
+      padding: 14px 38px 16px 24px;
+      margin-top: 24px;
+      max-width: 448px;
+      color: #494453;
+      font-size: 11px;
+      line-height: 18.88px;
+      display: flex;
+      gap: 12px;
+
+    }
+
+     .below-form i{
+      font-size: 16px;
+      color: #006B50;
+      transform: translate(-17px, -16px) rotate(92deg);
+    }
+
+
+    .footer {
+      padding: 50px 20px 48px;
+      text-align: center;
+      border-top: 1px solid #CAC4D033;
+      background: #F8F7F9;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 32px;
+      margin-bottom: 27px;
+
+    }
+
+    .footer-links a {
+      text-decoration: none;
+      color: #3D3D3D;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+    }
+
+    .footer-copy {
+      font-size: 12px;
+      color: rgba(61, 61, 61, 0.5);
+      font-weight: bold;
+      letter-spacing: 0.3px;
+    }
+
+    @media (max-width: 1024px) {
+      .container {
+        gap: 40px;
+      }
+
+      .right {
+        flex-basis: 420px;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .container {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0 24px 40px;
+      }
+
+      .right {
+        width: 100%;
+        flex-basis: 100%;
+      }
+
+      .card {
+        min-height: auto;
+        padding: 48px 32px 32px;
+      }
+
+      .card::before {
+        width: 320px;
+        height: 240px;
+        top: -90px;
+        right: -80px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .header {
+        padding: 22px 24px;
+        font-size: 1.7rem;
+      }
+
+      .container {
+        padding: 10px 16px 40px;
+      }
+
+      .card {
+        padding: 32px 24px 28px;
+        border-radius: 22px;
+      }
+      .card::before {
+        display: none;
+      }
+      .socials {
+        grid-template-columns: 1fr;
+      }
+
+
+      .divider::before,
+      .divider::after {
+        width: 24%;
+      }
+    }
+
+
+    /* FOrgot password css */
+    .forgot-pwd-container .card {
+      min-height: auto;
+      padding: 49px 42px 50px;
+    }
+    .forgot-pwd-container .container {
+      min-height: 935px;
+    }
+    .forgot-pwd-container .card h2{
+      margin-top: 24px;
+      margin-bottom: 12px;
+    }
+     .forgot-pwd-container form label{
+      margin-top: 40px;
+      letter-spacing: 0.6px;
+    }
+    .forgot-pwd-container .btn{
+      margin-top: 32px;
+    }
+
+  .forgot-pwd-container .login i{
+    margin-right: 8px;
+  }
+  .forgot-pwd-container .login {
+    margin-top: 48px;
+  }
+  .forgot-pwd-container .card h2.forgot {
+      color: #3D3D3D;
+      line-height: 36px;
+      letter-spacing: -0.75px;
+
+    }
+    .forgot-pwd-container .sub{
+      max-width: 302px;
+      margin: auto;
+      line-height: 26px;
+    }
+    .text-below-form{
+      margin-top: 48px;
+      font-size: 12px;
+      line-height: 16px;
+      letter-spacing: 2.4px;
+      text-transform: uppercase;
+      color: #3D3D3D;
+      font-weight: 600;
+      text-align: center;
+      opacity: 0.5;
+    }
