@@ -210,6 +210,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	gap: 10px;
+	overflow: auto;
 }
 
 .topbar {
@@ -297,14 +298,16 @@ body {
 	border: 0.5px solid var(--border-body);
 	border-radius: 8px;
 	overflow: hidden;
-	display: grid;
+	display: flex;
 	grid-template-columns: 1.02fr 1fr;
 	margin: 8px 27px 15px;
+	flex-wrap:wrap;
 }
 
 .left-pane {
 	padding: 25px 22px 15px;
 	border-right: 0.5px solid var(--border-body);
+	width: 50%;
 }
 
 .field {
@@ -500,6 +503,7 @@ select {
 	display: grid;
 	place-items: center;
 	position: relative;
+	width: 50%;
 }
 
 .empty {
@@ -1038,6 +1042,230 @@ select {
 }
 
 
+
+
+
+/* ─────────────────────────────────────────────
+   modal-extras.css
+   Append these rules into your source/style.css
+   (or link this file separately in index.html)
+───────────────────────────────────────────── */
+
+/* Shared field wrapper */
+.modal-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+/* Field label */
+.modal-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.modal-label .optional {
+  font-weight: 400;
+  color: #999;
+  font-size: 12px;
+}
+
+/* Text input */
+.modal-input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 14px;
+  color: #1a1a1a;
+  background: #fafafa;
+  outline: none;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+
+.modal-input:focus {
+  border-color: #4ecdc4;
+  background: #fff;
+}
+
+.modal-input::placeholder {
+  color: #bbb;
+}
+
+/* Textarea */
+.modal-textarea {
+  width: 100%;
+  min-height: 140px;
+  padding: 12px 14px;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 14px;
+  color: #1a1a1a;
+  background: #fafafa;
+  outline: none;
+  resize: vertical;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+  font-family: inherit;
+  line-height: 1.5;
+}
+
+.modal-textarea:focus {
+  border-color: #4ecdc4;
+  background: #fff;
+}
+
+.modal-textarea::placeholder {
+  color: #bbb;
+}
+
+/* Character counter */
+.char-count {
+  font-size: 12px;
+  color: #999;
+  text-align: left;
+  margin-top: 4px;
+}
+
+/* Select wrapper */
+.modal-select-wrap {
+  position: relative;
+}
+
+.modal-select-wrap::after {
+  content: '▾';
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+  pointer-events: none;
+}
+
+.modal-select {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 14px;
+  color: #1a1a1a;
+  background: #fafafa;
+  outline: none;
+  appearance: none;
+  cursor: pointer;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+
+.modal-select:focus {
+  border-color: #4ecdc4;
+}
+
+/* Modal action buttons row */
+.modal-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+/* ─────────────────────────────────────────────
+   View All Modal Styles
+───────────────────────────────────────────── */
+
+/* Scrollable file list */
+.vf-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-height: 360px;
+  overflow-y: auto;
+  margin-top: 16px;
+  scrollbar-width: thin;
+  scrollbar-color: #e0e0e0 transparent;
+}
+
+.vf-list::-webkit-scrollbar { width: 5px; }
+.vf-list::-webkit-scrollbar-track { background: transparent; }
+.vf-list::-webkit-scrollbar-thumb { background: #e0e0e0; border-radius: 99px; }
+
+/* Each file row */
+.vf-item {
+  display: grid;
+  grid-template-columns: 44px 1fr auto;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 4px;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background 0.15s;
+}
+
+.vf-item:last-child { border-bottom: none; }
+.vf-item:hover { background: #fafafa; border-radius: 8px; }
+
+/* File type badge */
+.vf-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  flex-shrink: 0;
+}
+
+/* File name & meta */
+.vf-meta { min-width: 0; }
+
+.vf-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: #1a1a1a;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 3px;
+}
+
+.vf-sub {
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+/* Delete button */
+.vf-delete {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.55;
+  transition: opacity 0.15s, background 0.15s;
+  flex-shrink: 0;
+}
+
+.vf-delete:hover {
+  opacity: 1;
+  background: #fff1f1;
+}
+
+/* Empty state */
+.vf-empty {
+  text-align: center;
+  color: #9ca3af;
+  font-size: 14px;
+  padding: 40px 20px;
+}
+
+
 /*Modal Popup CSS End*/
 
 
@@ -1072,6 +1300,10 @@ select {
 	.left-pane {
 		border-right: 0;
 		border-bottom: 1px solid var(--border);
+		width: 100%;
+	}
+	.right-pane{
+		width: 100%;
 	}
 
 	.actions {

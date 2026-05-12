@@ -8,8 +8,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Intel+One+Mono:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-  
   <link rel="stylesheet" href="source/style.css">
+  <link rel="stylesheet" href="source/modal-extras.css">
 </head>
 <body>
   <div class="app">
@@ -21,7 +21,9 @@
         <div class="logo-icon" id="logo-small">
           <img src="./images/Logos/White Icon.png" alt="Herobot logo">
         </div>
-        <button class="collapse-btn" id="sidebarToggle" aria-label="Collapse sidebar" aria-expanded="true"><img src="images/arrow-left.svg"/></button>
+        <button class="collapse-btn" id="sidebarToggle" aria-label="Collapse sidebar" aria-expanded="true">
+          <img src="images/arrow-left.svg"/>
+        </button>
       </div>
 
       <div class="nav-section-top">
@@ -76,20 +78,19 @@
             </div>
           </div>
         </div>
-
         <span class="topbar-divider"></span>
         <span class="top-icon">
           <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#848484" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="6"></circle>
-                <line x1="12" y1="1" x2="12" y2="3"></line>
-                <line x1="12" y1="21" x2="12" y2="23"></line>
-                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                <line x1="1" y1="12" x2="3" y2="12"></line>
-                <line x1="21" y1="12" x2="23" y2="12"></line>
-                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-              </svg>
+            <circle cx="12" cy="12" r="6"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
         </span>
         <span class="topbar-divider"></span>
         <div class="avatar-menu" id="avatarMenu">
@@ -140,7 +141,7 @@
             <div class="divSource">
               <div class="source-left"><span><i><img src="images/documents.svg"/></i></span><span>Documents</span></div>
               <div class="source-middle"><span>Project_Specs.pdf, User_Guide.docx, +2 more</span></div>
-              <div class="source-right"><span><a href="">VIEW ALL</a></span></div>
+              <div class="source-right"><span><a href="#" class="view-all-link" data-source="Documents">VIEW ALL</a></span></div>
             </div>
             <button class="plus open-modal" data-source="Documents" aria-label="Add Documents"><i class="bi bi-plus"></i></button>
           </div>
@@ -148,7 +149,7 @@
             <div class="divSource">
               <div class="source-left"><span><i><img src="images/api.svg"/></i></span><span>API</span></div>
               <div class="source-middle"><span>Stripe API, XYZ API, +1 more</span></div>
-              <div class="source-right"><span><a href="">VIEW ALL</a></span></div>
+              <div class="source-right"><span><a href="#" class="view-all-link" data-source="API">VIEW ALL</a></span></div>
             </div>
             <button class="plus open-modal" data-source="API" aria-label="Add API"><i class="bi bi-plus"></i></button>
           </div>
@@ -156,7 +157,7 @@
             <div class="divSource">
               <div class="source-left"><span><i><img src="images/text.svg"/></i></span><span>Text</span></div>
               <div class="source-middle"><span>Aenean vulputate eleifend tellus. Aenean leo l...</span></div>
-              <div class="source-right"><span><a href="">VIEW ALL</a></span></div>
+              <div class="source-right"><span><a href="#" class="view-all-link" data-source="Text">VIEW ALL</a></span></div>
             </div>
             <button class="plus open-modal" data-source="Text" aria-label="Add Text"><i class="bi bi-plus"></i></button>
           </div>
@@ -203,8 +204,7 @@
     </main>
   </div>
 
-
-<!-- Modal: always present in DOM, content injected dynamically by modal.js -->
+  <!-- Modal: always present in DOM, content injected dynamically by modal.js -->
   <div class="overlay" id="overlay">
     <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
       <!-- Content rendered dynamically per source type (Documents / Text / API) -->
