@@ -21,7 +21,7 @@
         btn.onclick = () => {
           const row = btn.closest('.row');
           row.classList.toggle('open');
-          btn.textContent = row.classList.contains('open') ? '⌃' : '⌄';
+          btn.innerHTML = row.classList.contains('open') ? '<i class="bi bi-chevron-up"></i>' : '<i class="bi bi-chevron-down"></i>';
         };
       });
       document.querySelectorAll('.item-check').forEach(cb => {
@@ -102,3 +102,28 @@
     document.querySelectorAll('.dropdown-menu').forEach(m => m.classList.remove('open'));
   });
   // review page end here
+
+  // Review page gap section start here
+    const reviewSectionToggleBtn = document.getElementById('reviewSectionToggleBtn');
+    const reviewSectionPane = document.getElementById('reviewSectionPane');
+    const reviewSectionPaneCloseBtn = document.getElementById('reviewSectionPaneCloseBtn');
+    const reviewSectionRemoveRowBtns = document.querySelectorAll('.review-section-remove-row-btn');
+
+    reviewSectionToggleBtn.addEventListener('click', function () {
+      const isOpen = reviewSectionPane.classList.toggle('review-section-is-open');
+    });
+
+    reviewSectionPaneCloseBtn.addEventListener('click', function () {
+      reviewSectionPane.classList.remove('review-section-is-open');
+    });
+
+    reviewSectionRemoveRowBtns.forEach(function (button) {
+      button.addEventListener('click', function () {
+        const row = button.closest('.review-section-row');
+        if (row) {
+          row.remove();
+        }
+      });
+    });
+
+  // Review page gap section end here

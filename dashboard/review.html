@@ -30,8 +30,8 @@
             <div class="nav-section-top">
                 <div class="nav-title">Build</div>
                 <ul class="sidebar-menu">
-                    <li><a href="#" class="nav-item active"><span class="icon"><i><img src="./images/Navigation/addKnowledge.svg" /></i></span><span class="text">Add Knowledge</span></a></li>
-                    <li><a href="#" class="nav-item"><span class="icon"><i><img src="./images/Navigation/reviewAndTest.svg" /></i></span><span class="text">Review &amp; Test</span></a></li>
+                    <li><a href="#" class="nav-item"><span class="icon"><i><img src="./images/Navigation/addKnowledge.svg" /></i></span><span class="text">Add Knowledge</span></a></li>
+                    <li><a href="#" class="nav-item active"><span class="icon"><i><img src="./images/Navigation/reviewAndTest.svg" /></i></span><span class="text">Review &amp; Test</span></a></li>
                     <li><a href="#" class="nav-item"><span class="icon"><i><img src="./images/Navigation/Behaviour.svg" /></i></span><span class="text">Behaviour</span></a></li>
                     <li><a href="#" class="nav-item"><span class="icon"><i><img src="./images/Navigation/Design.svg" /></i></span><span class="text">Design</span></a></li>
                 </ul>
@@ -106,7 +106,7 @@
                         <div class="actions">
                             <button class="btn-review open-modal" id="addBtn">ADD</button>
                             <button class="btn-review">UPLOAD</button>
-                            <button class="btn-review">GAP</button>
+                            <button class="btn-review review-section-cta" type="button" id="reviewSectionToggleBtn">GAP</button>
                             <button class="btn-review">CONFLICT</button>
                             <button class="btn-review">ERROR</button>
                         </div>
@@ -115,6 +115,91 @@
                             <button class="btn-review icon-btn"><i><img src="./images/icon-search.svg" /></i></button>
                         </div>
                     </div>
+                    <!-- Gap secton start here -->
+                    <div class="review-section-wrapper">
+                        <div class="review-section-pane" id="reviewSectionPane">
+                        <div class="review-section-header">
+                            <h2 class="review-section-title">AI Gap Analysis</h2>
+                            <button
+                            type="button"
+                            class="review-section-pane-close"
+                            id="reviewSectionPaneCloseBtn"
+                            >
+                            &times;
+                            </button>
+                        </div>
+
+                        <div class="review-section-subtitle">
+                            Questions your knowledge base cannot answer:
+                        </div>
+
+                        <div class="review-section-list">
+                            <div class="review-section-row">
+                            <div class="review-section-question">
+                                1. What specific chemicals-industry consulting services does Accenture offer
+                                (e.g., process optimization, sustainability, digital transformation)?
+                            </div>
+                            <div class="review-section-actions">
+                                <button type="button" class="review-section-btn review-section-btn-generate">Generate</button>
+                                <button type="button" class="review-section-btn review-section-btn-write">Write</button>
+                                <button type="button" class="review-section-btn-close review-section-remove-row-btn">&times;</button>
+                            </div>
+                            </div>
+
+                            <div class="review-section-row">
+                            <div class="review-section-question">
+                                2. How can I apply for a job at Accenture France and what are the current open positions?
+                            </div>
+                            <div class="review-section-actions">
+                                <button type="button" class="review-section-btn review-section-btn-generate">Generate</button>
+                                <button type="button" class="review-section-btn review-section-btn-write">Write</button>
+                                <button type="button" class="review-section-btn-close review-section-remove-row-btn">&times;</button>
+                            </div>
+                            </div>
+
+                            <div class="review-section-row">
+                            <div class="review-section-question">
+                                3. What is Accenture's "Let There Be Change" campaign about and what initiatives does it include?
+                            </div>
+                            <div class="review-section-actions">
+                                <button type="button" class="review-section-btn review-section-btn-generate">Generate</button>
+                                <button type="button" class="review-section-btn review-section-btn-write">Write</button>
+                                <button type="button" class="review-section-btn-close review-section-remove-row-btn">&times;</button>
+                            </div>
+                            </div>
+
+                            <div class="review-section-row">
+                            <div class="review-section-question">
+                                4. What are Accenture's office locations and contact details in the UAE?
+                            </div>
+                            <div class="review-section-actions">
+                                <button type="button" class="review-section-btn review-section-btn-generate">Generate</button>
+                                <button type="button" class="review-section-btn review-section-btn-write">Write</button>
+                                <button type="button" class="review-section-btn-close review-section-remove-row-btn">&times;</button>
+                            </div>
+                            </div>
+
+                            <div class="review-section-row">
+                            <div class="review-section-question">
+                                5. How do I navigate Accenture's website to find industry-specific solutions beyond chemicals?
+                            </div>
+                            <div class="review-section-actions">
+                                <button type="button" class="review-section-btn review-section-btn-generate">Generate</button>
+                                <button type="button" class="review-section-btn review-section-btn-write">Write</button>
+                                <button type="button" class="review-section-btn-close review-section-remove-row-btn">&times;</button>
+                            </div>
+                            </div>
+                        </div>
+
+                        <div class="review-section-suggestion">
+                            <strong>Suggestion:</strong> The knowledge base needs substantial expansion beyond navigation
+                            templates and country landing pages. Add detailed service descriptions for each industry vertical,
+                            create comprehensive career sections, provide complete office directories, and build a user-friendly
+                            site map that guides visitors to relevant solutions.
+                        </div>
+                        </div>
+                    </div>
+                    <!-- Gap secton end here -->
                     <div class="list-head">
                         <label class="select-all"><input type="checkbox" id="selectAll"><span>Select all</span></label>
                         <div class="sort">Sort by: <select id="sortSelect">
@@ -131,82 +216,82 @@
                                 <div class="item-url">https://www.accenture.com/ae-en/industries/chemicalsays</div>
                             </div>
                             <div class="row-actions">
-                                <button class="dots-btn" type="button">•••</button>
+                                <button class="dots-btn" type="button"><i class="bi bi-three-dots"></i></button>
                                 <div class="dropdown-menu">
                                     <button type="button">Edit</button>
                                     <button type="button">Delete</button>
                                     <button type="button">Add</button>
                                 </div>
                             </div>
-                            <button class="caret-btn" aria-label="toggle">⌄</button>
+                            <button class="caret-btn" aria-label="toggle"><i class="bi bi-chevron-down"></i></button>
                             <div class="details">This section can expand and collapse with a small slide animation. You can place extra text, tags, or status data here.</div>
                         </div>
-                        <div class="row" data-title="Alpha Services | Example">
+                        <div class="row" data-title="Chemicals Industry Services | Accenture">
                             <input type="checkbox" class="item-check">
                             <div>
-                                <p class="item-title">Alpha Services | Example</p>
-                                <div class="item-url">https://example.com/alpha</div>
+                                <p class="item-title">Chemicals Industry Services | Accenture</p>
+                                <div class="item-url">https://www.accenture.com/ae-en/industries/chemicalsays</div>
                             </div>
                             <div class="row-actions">
-                                <button class="dots-btn" type="button">•••</button>
+                                <button class="dots-btn" type="button"><i class="bi bi-three-dots"></i></button>
                                 <div class="dropdown-menu">
                                     <button type="button">Edit</button>
                                     <button type="button">Delete</button>
                                     <button type="button">Add</button>
                                 </div>
                             </div>
-                            <button class="caret-btn" aria-label="toggle">⌄</button>
+                            <button class="caret-btn" aria-label="toggle"><i class="bi bi-chevron-down"></i></button>
                             <div class="details">This section can expand and collapse with a small slide animation. You can place extra text, tags, or status data here.</div>
                         </div>
-                        <div class="row" data-title="Delta Services | Example">
+                        <div class="row" data-title="Chemicals Industry Services | Accenture">
                             <input type="checkbox" class="item-check">
                             <div>
-                                <p class="item-title">Delta Services | Example</p>
-                                <div class="item-url">https://example.com/delta</div>
+                                <p class="item-title">Chemicals Industry Services | Accenture</p>
+                                <div class="item-url">https://www.accenture.com/ae-en/industries/chemicalsays</div>
                             </div>
                             <div class="row-actions">
-                                <button class="dots-btn" type="button">•••</button>
+                                <button class="dots-btn" type="button"><i class="bi bi-three-dots"></i></button>
                                 <div class="dropdown-menu">
                                     <button type="button">Edit</button>
                                     <button type="button">Delete</button>
                                     <button type="button">Add</button>
                                 </div>
                             </div>
-                            <button class="caret-btn" aria-label="toggle">⌄</button>
+                            <button class="caret-btn" aria-label="toggle"><i class="bi bi-chevron-down"></i></button>
                             <div class="details">This section can expand and collapse with a small slide animation. You can place extra text, tags, or status data here.</div>
                         </div>
-                        <div class="row" data-title="Beta Services | Example">
+                        <div class="row" data-title="Chemicals Industry Services | Accenture">
                             <input type="checkbox" class="item-check">
                             <div>
-                                <p class="item-title">Beta Services | Example</p>
-                                <div class="item-url">https://example.com/beta</div>
+                                <p class="item-title">Chemicals Industry Services | Accenture</p>
+                                <div class="item-url">https://www.accenture.com/ae-en/industries/chemicalsays</div>
                             </div>
                             <div class="row-actions">
-                                <button class="dots-btn" type="button">•••</button>
+                                <button class="dots-btn" type="button"><i class="bi bi-three-dots"></i></button>
                                 <div class="dropdown-menu">
                                     <button type="button">Edit</button>
                                     <button type="button">Delete</button>
                                     <button type="button">Add</button>
                                 </div>
                             </div>
-                            <button class="caret-btn" aria-label="toggle">⌄</button>
+                            <button class="caret-btn" aria-label="toggle"><i class="bi bi-chevron-down"></i></button>
                             <div class="details">This section can expand and collapse with a small slide animation. You can place extra text, tags, or status data here.</div>
                         </div>
-                        <div class="row" data-title="Gamma Services | Example">
+                        <div class="row" data-title="Chemicals Industry Services | Accenture">
                             <input type="checkbox" class="item-check">
                             <div>
-                                <p class="item-title">Gamma Services | Example</p>
-                                <div class="item-url">https://example.com/gamma</div>
+                                <p class="item-title">Chemicals Industry Services | Accenture</p>
+                                <div class="item-url">https://www.accenture.com/ae-en/industries/chemicalsays</div>
                             </div>
                             <div class="row-actions">
-                                <button class="dots-btn" type="button">•••</button>
+                                <button class="dots-btn" type="button"><i class="bi bi-three-dots"></i></button>
                                 <div class="dropdown-menu">
                                     <button type="button">Edit</button>
                                     <button type="button">Delete</button>
                                     <button type="button">Add</button>
                                 </div>
                             </div>
-                            <button class="caret-btn" aria-label="toggle">⌄</button>
+                            <button class="caret-btn" aria-label="toggle"><i class="bi bi-chevron-down"></i></button>
                             <div class="details">This section can expand and collapse with a small slide animation. You can place extra text, tags, or status data here.</div>
                         </div>
                     </div>
@@ -217,7 +302,7 @@
                                 <option>10</option>
                                 <option>15</option>
                             </select></div>
-                        <div class="pager"><span id="pageInfo">Page 1 of 1</span><button class="page-btn" id="firstPage">«</button><button class="page-btn" id="prevPage">‹</button><button class="page-btn" id="nextPage">›</button><button class="page-btn" id="lastPage">»</button></div>
+                        <div class="pager"><span id="pageInfo">Page 1 of 1</span><button class="page-btn" id="firstPage"><i class="bi bi-chevron-double-left"></i></button><button class="page-btn" id="prevPage"><i class="bi bi-chevron-left"></i></button><button class="page-btn" id="nextPage"><i class="bi bi-chevron-right"></i></button><button class="page-btn" id="lastPage"><i class="bi bi-chevron-double-right"></i></button></div>
                     </div>
                 </div>
 
@@ -235,15 +320,18 @@
                             <div class="bubble">Hi! How can I help you today?</div>
                         </div>
                         <div class="chat-actions"><button class="pill">About This</button><button class="pill">FAQ</button><button class="pill">Explain</button></div>
-                        <div class="chat-input"><input type="text" placeholder="Type your message..." /><button class="send-chat">➤</button></div>
+                        <div class="chat-input"><input type="text" placeholder="Type your message..." /><button class="send-chat"><img src="images/paper-plane-logo.svg" alt="Send chat" /></button></div>
+                        <div class="chat-copyright">
+                            Powered by <img src="images/chatbot-logo.svg" alt="logo-chatbot" />
+                        </div>
                     </div>
-                    <button class="fab" id="chatToggle">💬</button>
+                    <button class="fab" id="chatToggle"><i class="bi bi-chat-left"></i></button>
                 </div>
             </section>
 
             <footer class="footer">
-                <span>Powered by Herobot</span>
-                <span>Privacy Policy &nbsp; &nbsp; &nbsp; © 2026 Herobot. All rights reserved.</span>
+                <span>Powered by Alpha8OT Studio</span>
+                <span>Privacy Policy &nbsp; &nbsp; &nbsp; © 2026 AlphaBOT Studio</span>
             </footer>
         </main>
     </div>
