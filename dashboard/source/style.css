@@ -308,6 +308,8 @@ body {
 	padding: 25px 22px 15px;
 	border-right: 0.5px solid var(--border-body);
 	width: 50%;
+	overflow: auto;
+    height: 80vh;
 }
 
 .field {
