@@ -1506,6 +1506,10 @@ select {
 /* CSS for add-knowledge-filled screen End */
 
 /* Review section css start here */
+.review-section .left-pane{
+	max-height: calc(100vh - 140px);
+	overflow: auto;
+}
 .review-section .right-pane{
 	padding: 25px 19px;
     place-items: normal;
@@ -1560,7 +1564,7 @@ select {
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  margin-bottom: 14px;
+  /* margin-bottom: 14px; */
   padding: 8px;
   background-color: #F9F9FA;
 }
@@ -1598,7 +1602,7 @@ select {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 5px 25px 16px 1px;
+  padding: 0 25px 16px 1px;
   border-bottom: 1px solid #ececf3;
   margin-bottom: 6px;
   font-size: 14px;
@@ -1626,7 +1630,9 @@ select {
   line-height: 20px;
   letter-spacing: -0.7px;
   gap: 14px;
+  position: relative;
 }
+
 .review-section #sortSelect,
 .review-section #sortSelect:focus{
 	border: 0;
@@ -1641,8 +1647,9 @@ select {
 	/* Firefox */
 	appearance: none;
 	/* Standard */
+	padding-right: 16px;
 }
-.review-section #sortSelect::after {
+.review-section .sort::after {
     content: "\f282";
     display: inline-block;
     font-family: bootstrap-icons !important;
@@ -1653,8 +1660,8 @@ select {
     line-height: 1;
     vertical-align: -.125em;
     -webkit-font-smoothing: antialiased;
-
-
+	position: absolute;
+    right: 0px;
 }
 .review-section .row {
   display: grid;
@@ -1682,6 +1689,7 @@ select {
   gap: 14px;
   color: #777;
   padding-top: 3px;
+  align-self: baseline;
 }
 .review-section .dots-btn {
   border: none;
@@ -1731,6 +1739,7 @@ select {
   height: 28px;
   display: grid;
   place-items: center;
+  align-self: baseline;
 }
 .review-section .details {
   grid-column: 2 / -1;
@@ -1967,8 +1976,7 @@ select {
 
 /* Gap section start here */
 .review-section .review-section-wrapper {
-  font-family: Arial, sans-serif;
-  margin-top: 6px;
+  margin-top: 17px;
   display: inline-block;
 }
 
@@ -2024,7 +2032,7 @@ select {
 .review-section .review-section-list {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 8px;
 }
 
 .review-section .review-section-row {
