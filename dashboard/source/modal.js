@@ -36,7 +36,7 @@
 
 /* ── File type icon config ── */
 const FILE_ICONS = {
-  pdf:  { bg: '#FEE2E2', color: '#DC2626', label: 'PDF', icon: 'images/pdf.svg' },
+  pdf:  { bg: '#FEE2E2', color: '#DC2626', label: 'PDF', icon: 'images/PDF.svg' },
   docx: { bg: '#DBEAFE', color: '#2563EB', label: 'DOC', icon: 'images/guide.svg' },
   doc:  { bg: '#DBEAFE', color: '#2563EB', label: 'DOC', icon: 'images/doc.svg' },
   json: { bg: '#FEF3C7', color: '#D97706', label: '{ }', icon: 'images/json.svg' },
