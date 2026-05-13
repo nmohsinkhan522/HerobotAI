@@ -45,7 +45,7 @@
       rows.forEach(({ row, checked, open }) => {
         row.querySelector('.item-check').checked = checked;
         row.classList.toggle('open', open);
-        row.querySelector('.caret-btn').textContent = open ? '⌃' : '⌄';
+        // row.querySelector('.caret-btn').textContent = open ? '<i class="bi bi-chevron-up"></i>' : '<i class="bi bi-chevron-down"></i>';
         list.appendChild(row);
       });
       selectAll.checked = [...itemChecks()].every(x => x.checked);

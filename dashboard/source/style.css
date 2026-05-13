@@ -1032,7 +1032,8 @@ select {
 	box-sizing: border-box;
 }
 
-.modal-select:focus {
+.modal-select:focus,
+.modal-url-wrap:focus-within {
 	border-color: #a78bfa;
 }
 
@@ -1043,86 +1044,39 @@ select {
 	margin-top: 8px;
 }
 
-
-
-
-
-/* ─────────────────────────────────────────────
-   modal-extras.css
-   Append these rules into your source/style.css
-   (or link this file separately in index.html)
-───────────────────────────────────────────── */
-
-/* Shared field wrapper */
-.modal-field {
+.modal-url-wrap {
   display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin-bottom: 18px;
+  align-items: stretch;
+  border: 1.5px solid #E5E7EB;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #F9FAFB;
+  transition: border-color 0.15s;
 }
 
-/* Field label */
-.modal-label {
+.modal-url-prefix {
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  background: #F3F4F6;
+  border-right: 1.5px solid #E5E7EB;
+  font-size: 13px;
+  color: #555;
+  font-weight: 500;
+  white-space: nowrap;
+  user-select: none;
+}
+.modal-url-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 0 12px;
   font-size: 14px;
-  font-weight: 600;
   color: #1a1a1a;
-}
-
-.modal-label .optional {
-  font-weight: 400;
-  color: #999;
-  font-size: 12px;
-}
-
-/* Text input */
-.modal-input {
-  width: 100%;
-  padding: 12px 14px;
-  border: 1.5px solid #e0e0e0;
-  border-radius: 10px;
-  font-size: 14px;
-  color: #1a1a1a;
-  background: #fafafa;
+  height: 42px;
   outline: none;
-  transition: border-color 0.2s;
-  box-sizing: border-box;
 }
-
-.modal-input:focus {
-  border-color: #4ecdc4;
-  background: #fff;
-}
-
-.modal-input::placeholder {
-  color: #bbb;
-}
-
-/* Textarea */
-.modal-textarea {
-  width: 100%;
-  min-height: 140px;
-  padding: 12px 14px;
-  border: 1.5px solid #e0e0e0;
-  border-radius: 10px;
-  font-size: 14px;
-  color: #1a1a1a;
-  background: #fafafa;
-  outline: none;
-  resize: vertical;
-  transition: border-color 0.2s;
-  box-sizing: border-box;
-  font-family: inherit;
-  line-height: 1.5;
-}
-
-.modal-textarea:focus {
-  border-color: #4ecdc4;
-  background: #fff;
-}
-
-.modal-textarea::placeholder {
-  color: #bbb;
-}
+.modal-url-input::placeholder { color: #9CA3AF; }
 
 /* Character counter */
 .char-count {
@@ -1506,6 +1460,7 @@ select {
 /* CSS for add-knowledge-filled screen End */
 
 /* Review section css start here */
+
 /* .review-section .left-pane{
 	max-height: calc(100vh - 140px);
 	overflow: auto;

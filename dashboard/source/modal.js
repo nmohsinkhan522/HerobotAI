@@ -32,6 +32,10 @@
       { name: 'FAQ Content',      size: '4.5 KB', date: 'Added Sep 11, 2023', type: 'txt' },
       { name: 'Product Features', size: '1.8 KB', date: 'Added Sep 09, 2023', type: 'txt' },
     ],
+    Website: [                                          // ← ADD THIS
+      { name: 'Pricing Page',   size: '', date: 'Added Sep 12, 2023', type: 'web' },
+      { name: 'Product Docs',   size: '', date: 'Added Sep 11, 2023', type: 'web' },
+    ],
   };
 
 /* ── File type icon config ── */
@@ -84,6 +88,11 @@ const getFileIcon = (type) => {
       title:    'Add API',
       subtitle: 'Connect an external API as a knowledge source for your bot.',
       render:   renderAPIModal,
+    },
+    Website: {                                          // ← ADD THIS
+      title:    'Add Website Sources',
+      subtitle: 'Enter URLs and descriptions to help Herobot crawl and understand your content.',
+      render:   renderWebsiteModal,
     },
   };
 
@@ -400,5 +409,67 @@ const getFileIcon = (type) => {
       openModal(this.dataset.source || 'Documents', true);
     });
   });
+
+
+  // REview modal popup start
+
+  /* ════════════════════════════════════════════
+   WEBSITE MODAL
+    ════════════════════════════════════════════ */
+    function renderWebsiteModal(container) {
+      const MAX_CHARS = 1500;
+      container.innerHTML = `
+        <div class="modal-field">
+          <label class="modal-label" for="wsTitle">Page Title*</label>
+          <input class="modal-input" id="wsTitle" type="text" placeholder="What is your title?"/>
+        </div>
+        <div class="modal-field">
+          <label class="modal-label" for="wsUrl">Website*</label>
+          <div class="modal-url-wrap">
+            <span class="modal-url-prefix">https://</span>
+            <input class="modal-url-input" id="wsUrl" type="text" placeholder="www.example.com"/>
+          </div>
+        </div>
+        <div class="modal-field">
+          <label class="modal-label" for="wsDesc">Description*</label>
+          <textarea class="modal-textarea" id="wsDesc" maxlength="${MAX_CHARS}"
+            placeholder="e.g. Add your website link and describe what this page is about, such as pricing details, product features, or support information."></textarea>
+          <div class="char-count"><span id="wsCharCount">0</span>/${MAX_CHARS}</div>
+        </div>
+        <div class="modal-actions">
+          <button class="btn cancel" id="cancelBtn">CANCEL</button>
+          <button class="btn upload" id="saveBtn">SAVE</button>
+        </div>
+      `;
+
+      const wsDesc     = container.querySelector('#wsDesc');
+      const wsCharCount = container.querySelector('#wsCharCount');
+
+      wsDesc.addEventListener('input', () => {
+        wsCharCount.textContent = wsDesc.value.length;
+      });
+
+      container.querySelector('#saveBtn').addEventListener('click', () => {
+        const title = container.querySelector('#wsTitle').value.trim();
+        const url   = container.querySelector('#wsUrl').value.trim();
+        const desc  = wsDesc.value.trim();
+        if (!title || !url || !desc) {
+          alert('Please fill in all required fields.');
+          return;
+        }
+        sourceData.Website.push({
+          name: title,
+          size: '',
+          date: 'Added ' + new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
+          type: 'web',
+        });
+        console.log('Website saved:', { title, url: 'https://' + url, desc });
+        closeModal();
+      });
+
+      container.querySelector('#cancelBtn').addEventListener('click', closeModal);
+    }
+
+  // REview modal popup End
 
 })();
