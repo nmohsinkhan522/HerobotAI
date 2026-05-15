@@ -72,6 +72,7 @@
       renderPagination();
     }
     
+    if(selectAll){
     selectAll.addEventListener('change', () => { itemChecks().forEach(cb => cb.checked = selectAll.checked); });
     sortSelect.addEventListener('change', () => sortRows(sortSelect.value));
     rowsPerPage.addEventListener('change', () => { currentPage = 1; renderPagination(); });
@@ -79,12 +80,14 @@
     prevPage.addEventListener('click', () => goToPage(Math.max(1, currentPage - 1)));
     nextPage.addEventListener('click', () => goToPage(currentPage + 1));
     lastPage.addEventListener('click', () => { const total = Math.max(1, Math.ceil([...list.querySelectorAll('.row')].length / parseInt(rowsPerPage.value,10))); goToPage(total); });
+    }
     // addBtn.addEventListener('click', () => popup.classList.add('open'));
     // closePopup.addEventListener('click', () => popup.classList.remove('open'));
     // popup.addEventListener('click', (e) => { if (e.target === popup) popup.classList.remove('open'); });
     chatToggle.addEventListener('click', () => chatBox.classList.toggle('closed'));
     updateItemHandlers();
     renderPagination();
+    
 	const dotButtons = document.querySelectorAll('.dots-btn');
 
   dotButtons.forEach(btn => {
@@ -108,15 +111,17 @@
     const reviewSectionPane = document.getElementById('reviewSectionPane');
     const reviewSectionPaneCloseBtn = document.getElementById('reviewSectionPaneCloseBtn');
     const reviewSectionRemoveRowBtns = document.querySelectorAll('.review-section-remove-row-btn');
-
+if(reviewSectionToggleBtn){
     reviewSectionToggleBtn.addEventListener('click', function () {
       const isOpen = reviewSectionPane.classList.toggle('review-section-is-open');
     });
-
+}
+if(reviewSectionPaneCloseBtn){
     reviewSectionPaneCloseBtn.addEventListener('click', function () {
       reviewSectionPane.classList.remove('review-section-is-open');
     });
-
+  }
+  if(reviewSectionRemoveRowBtns){
     reviewSectionRemoveRowBtns.forEach(function (button) {
       button.addEventListener('click', function () {
         const row = button.closest('.review-section-row');
@@ -125,5 +130,5 @@
         }
       });
     });
-
+  }
   // Review page gap section end here

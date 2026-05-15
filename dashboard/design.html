@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Herobot Add Knowledge</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="source/style.css">
+    <link rel="stylesheet" href="source/design.css">
+</head>
+
+<body>
+    <div class="app">
+        <aside class="sidebar">
+            <div class="logo-wrap">
+                <div class="logo" id="logo-big">
+                    <img src="./images/logo.svg" alt="Herobot logo">
+                </div>
+                <div class="logo-icon" id="logo-small">
+                    <img src="./images/Logos/White Icon.png" alt="Herobot logo">
+                </div>
+                <button class="collapse-btn" id="sidebarToggle" aria-label="Collapse sidebar" aria-expanded="true">
+                    <img src="images/arrow-left.svg" />
+                </button>
+            </div>
+
+            <div class="nav-section-top">
+                <div class="nav-title">Build</div>
+                <ul class="sidebar-menu">
+                    <li><a href="#" class="nav-item"><span class="icon"><i><img src="./images/Navigation/addKnowledge.svg" /></i></span><span class="text">Add Knowledge</span></a></li>
+                    <li><a href="#" class="nav-item"><span class="icon"><i><img src="./images/Navigation/reviewAndTest.svg" /></i></span><span class="text">Review &amp; Test</span></a></li>
+                    <li><a href="#" class="nav-item"><span class="icon"><i><img src="./images/Navigation/Behaviour.svg" /></i></span><span class="text">Behaviour</span></a></li>
+                    <li><a href="#" class="nav-item active"><span class="icon"><i><img src="./images/Navigation/Design.svg" /></i></span><span class="text">Design</span></a></li>
+                </ul>
+            </div>
+
+            <div class="nav-section">
+                <div class="nav-title">Connect</div>
+                <ul class="sidebar-menu">
+                    <li><a href="#" class="nav-item"><span class="icon"><i><img src="./images/Navigation/Workflows.svg" /></i></span><span class="text">Workflows</span></a></li>
+                    <li><a href="#" class="nav-item"><span class="icon"><i><img src="./images/Navigation/Integrations.svg" /></i></span><span class="text">Integrations</span></a></li>
+                </ul>
+            </div>
+
+            <div class="nav-section">
+                <div class="nav-title">Track</div>
+                <ul class="sidebar-menu">
+                    <li><a href="#" class="nav-item"><span class="icon"><i><img src="./images/Navigation/Analytics.svg" /></i></span><span class="text">Analytics</span></a></li>
+                    <li><a href="#" class="nav-item"><span class="icon"><i><img src="./images/Navigation/Conversation.svg" /></i></span><span class="text">Conversation</span></a></li>
+                    <li><a href="#" class="nav-item"><span class="icon"><i><img src="./images/Navigation/usageOverview.svg" /></i></span><span class="text">Usage Overview</span></a></li>
+                </ul>
+            </div>
+
+            <div class="nav-section">
+                <div class="nav-title">Manage</div>
+                <ul class="sidebar-menu">
+                    <li><a href="#" class="nav-item"><span class="icon"><i><img src="./images/Navigation/team.svg" /></i></span><span class="text">Team Access</span></a></li>
+                    <li><a href="#" class="nav-item"><span class="icon"><i><img src="./images/Navigation/accountSettings.svg" /></i></span><span class="text">Account Settings</span></a></li>
+                    <li><a href="#" class="nav-item"><span class="icon"><i><img src="./images/Navigation/Billing.svg" /></i></span><span class="text">Billing</span></a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <main class="main">
+            <header class="topbar">
+                <div class="topbar-left">
+                    <div class="bot-selector">
+                        <div class="leftIconLogo">
+                        <img src="images/logo-icon.svg"/>
+                        <span>XYZ Company</span>
+                        </div>
+                        <div class="rightIconselect">
+                        <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                        </div>
+                    </div>
+                </div>
+                <span class="topbar-divider"></span>
+                <span class="top-icon">
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#848484" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="6"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </span>
+                <span class="topbar-divider"></span>
+                <div class="avatar-menu" id="avatarMenu">
+                    <button class="avatar-trigger" id="avatarToggle" aria-label="Open user menu" aria-expanded="false" aria-haspopup="true">
+                        <div class="avatar" aria-hidden="true"><img src="images/user.svg" alt="user" /></div>
+                        <i class="bi bi-chevron-down top-icon"></i>
+                    </button>
+                    <div class="avatar-dropdown" id="avatarDropdown">
+                        <a class="dropdown-item" href="#"><span><i class="bi bi-person"></i></span><span>My Profile</span></a>
+                        <a class="dropdown-item" href="#"><span><i class="bi bi-gear"></i></span><span>Account Settings</span></a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#"><span><i class="bi bi-box-arrow-right"></i></span><span>Logout</span></a>
+                    </div>
+                </div>
+            </header>
+
+            <section class="workspace review-section">
+                
+                <div class="design-left left-pane">
+                    <!-- Tabs -->
+                    <div class="cw-tabs" role="tablist">
+                    <button class="cw-tab active" data-tab="chat" role="tab" aria-selected="true">Chat Widget</button>
+                    <button class="cw-tab" data-tab="voice" role="tab" aria-selected="false">Voice Widget</button>
+                    <button class="cw-tab" data-tab="avatar" role="tab" aria-selected="false">Avatar Widget</button>
+                    </div>
+
+                    <!-- CHAT WIDGET FORM -->
+                    <div class="cw-form-body" id="tabChat">
+
+                    <!-- APPEARANCE -->
+                    <div class="cw-section">
+                        <p class="cw-section-title">Appearance</p>
+                        <div class="cw-grid">
+
+                        <div class="cw-field">
+                            <label class="cw-label">Primary Color</label>
+                            <div class="cw-color-row">
+                            <input type="color" class="cw-color-swatch" id="primaryColor" value="#6038B3">
+                            <input type="text" class="cw-color-hex" id="primaryHex" value="#6038B3" maxlength="7">
+                            </div>
+                        </div>
+
+                        <div class="cw-field">
+                            <label class="cw-label">Secondary Color</label>
+                            <div class="cw-color-row">
+                            <input type="color" class="cw-color-swatch" id="secondaryColor" value="#6366F1">
+                            <input type="text" class="cw-color-hex" id="secondaryHex" value="#6366F1" maxlength="7">
+                            </div>
+                        </div>
+
+                        <div class="cw-field">
+                            <label class="cw-label">Theme</label>
+                            <div class="cw-select-wrap">
+                            <select class="cw-select" id="themeSelect">
+                                <option value="light" selected>Light</option>
+                                <option value="dark">Dark</option>
+                                <option value="auto">Auto</option>
+                            </select>
+                            </div>
+                        </div>
+
+                        <div class="cw-field">
+                            <label class="cw-label">Position</label>
+                            <div class="cw-select-wrap">
+                            <select class="cw-select" id="positionSelect">
+                                <option value="bottom-right" selected>Bottom Right</option>
+                                <option value="bottom-left">Bottom Left</option>
+                                <option value="top-right">Top Right</option>
+                                <option value="top-left">Top Left</option>
+                            </select>
+                            </div>
+                        </div>
+
+                        <div class="cw-field">
+                            <label class="cw-label">Gradient Position</label>
+                            <div class="cw-select-wrap">
+                            <select class="cw-select">
+                                <option selected>Left to Right</option>
+                                <option>Right to Left</option>
+                                <option>Top to Bottom</option>
+                                <option>Bottom to Top</option>
+                                <option>Diagonal</option>
+                            </select>
+                            </div>
+                        </div>
+
+                        <div class="cw-field">
+                            <label class="cw-label">Gradient Type</label>
+                            <div class="cw-select-wrap">
+                            <select class="cw-select">
+                                <option selected>Linear</option>
+                                <option>Radial</option>
+                                <option>None</option>
+                            </select>
+                            </div>
+                        </div>
+
+                        <div class="cw-field">
+                            <label class="cw-label">Button Size</label>
+                            <div class="cw-stepper">
+                            <button type="button" class="cw-stepper-btn" data-action="dec" data-target="btnSize">−</button>
+                            <input type="number" class="cw-stepper-input" id="btnSize" value="60" min="40" max="100">
+                            <button type="button" class="cw-stepper-btn" data-action="inc" data-target="btnSize">+</button>
+                            </div>
+                        </div>
+
+                        <div class="cw-field">
+                            <label class="cw-label">Border Radius</label>
+                            <div class="cw-stepper">
+                            <button type="button" class="cw-stepper-btn" data-action="dec" data-target="borderRadius">−</button>
+                            <input type="number" class="cw-stepper-input" id="borderRadius" value="16" min="0" max="50">
+                            <button type="button" class="cw-stepper-btn" data-action="inc" data-target="borderRadius">+</button>
+                            </div>
+                        </div>
+
+                        </div>
+                    </div>
+
+                    <div class="cw-divider"></div>
+
+                    <!-- BRANDING -->
+                    <div class="cw-section">
+                        <p class="cw-section-title">Branding</p>
+                        <div class="cw-grid">
+
+                        <div class="cw-field">
+                            <label class="cw-label">Profile Logo</label>
+                            <button type="button" class="cw-upload-btn">Update Profile Image</button>
+                        </div>
+
+                        <div class="cw-field">
+                            <label class="cw-label">Profile Logo BG</label>
+                            <div class="cw-color-row">
+                            <input type="color" class="cw-color-swatch" id="logoBgColor" value="#7D71BF">
+                            <input type="text" class="cw-color-hex" id="logoBgHex" value="#7D71BF" maxlength="7">
+                            </div>
+                        </div>
+
+                        <div class="cw-field">
+                            <label class="cw-label">Font</label>
+                            <button type="button" class="cw-upload-btn">Upload Font</button>
+                        </div>
+
+                        <div class="cw-field">
+                            <label class="cw-label">Change Font</label>
+                            <div class="cw-select-wrap">
+                            <select class="cw-select">
+                                <option selected>Inter</option>
+                                <option>Roboto</option>
+                                <option>Open Sans</option>
+                                <option>Poppins</option>
+                                <option>Lato</option>
+                            </select>
+                            </div>
+                        </div>
+
+                        <div class="cw-field">
+                            <label class="cw-label">Header Title</label>
+                            <input type="text" class="cw-input" id="headerTitle" value="Chat with us" placeholder="Chat with us">
+                        </div>
+
+                        <div class="cw-field">
+                            <label class="cw-label">Company Name</label>
+                            <input type="text" class="cw-input" id="companyName" value="AI Assistant" placeholder="AI Assistant">
+                        </div>
+
+                        <div class="cw-field">
+                            <label class="cw-label">Chat Bubble Color</label>
+                            <div class="cw-color-row">
+                            <input type="color" class="cw-color-swatch" id="bubbleColor" value="#6038B3">
+                            <input type="text" class="cw-color-hex" id="bubbleHex" value="#6038B3" maxlength="7">
+                            </div>
+                        </div>
+
+                        <div class="cw-field">
+                            <label class="cw-label">Avatar URL (Optional)</label>
+                            <input type="text" class="cw-input" placeholder="https://example.com/avatar.png">
+                        </div>
+
+                        </div>
+                    </div>
+
+                    <div class="cw-divider"></div>
+
+                    <!-- CHAT BEHAVIOUR -->
+                    <div class="cw-section">
+                        <p class="cw-section-title">Chat Behaviour</p>
+                        <div class="cw-grid">
+
+                        <div class="cw-field">
+                            <label class="cw-label">OTP Required</label>
+                            <div class="cw-select-wrap">
+                            <select class="cw-select">
+                                <option selected>Yes</option>
+                                <option>No</option>
+                            </select>
+                            </div>
+                        </div>
+
+                        <div class="cw-field">
+                            <label class="cw-label">OTP Source</label>
+                            <div class="cw-select-wrap">
+                            <select class="cw-select">
+                                <option selected>SMS</option>
+                                <option>Email</option>
+                                <option>WhatsApp</option>
+                            </select>
+                            </div>
+                        </div>
+
+                        <div class="cw-field cw-full">
+                            <label class="cw-label">Input Placeholder</label>
+                            <input type="text" class="cw-input" id="inputPlaceholder" value="Type your message..." placeholder="Type your message...">
+                        </div>
+
+                        <div class="cw-field cw-full">
+                            <label class="cw-label">Welcome Message</label>
+                            <input type="text" class="cw-input" id="welcomeMsg" value="Hi! How can I help you today?...." placeholder="Hi! How can I help you today?">
+                        </div>
+
+                        <div class="cw-field">
+                            <label class="cw-label">Time Out</label>
+                            <div class="cw-select-wrap">
+                            <select class="cw-select">
+                                <option selected>Yes</option>
+                                <option>No</option>
+                            </select>
+                            </div>
+                        </div>
+
+                        <div class="cw-field">
+                            <label class="cw-label">Time</label>
+                            <div class="cw-stepper">
+                            <button type="button" class="cw-stepper-btn" data-action="dec" data-target="timeoutVal">−</button>
+                            <input type="text" class="cw-stepper-input" id="timeoutVal" value="1 Min">
+                            <button type="button" class="cw-stepper-btn" data-action="inc" data-target="timeoutVal">+</button>
+                            </div>
+                        </div>
+
+                        <div class="cw-field cw-full">
+                            <label class="cw-label">Input Placeholder</label>
+                            <input type="text" class="cw-input" value="Are we still connected?" placeholder="Are we still connected?">
+                        </div>
+
+                        </div>
+                    </div>
+
+                    <div class="cw-divider"></div>
+
+                    <!-- SUGGESTED MESSAGES -->
+                    <div class="cw-section">
+                        <p class="cw-section-title">Suggested Message</p>
+                        <button type="button" class="cw-suggest-add" id="addSuggestBtn">
+                        <span style="font-size:16px">+</span> Add Suggested Message
+                        </button>
+                        <div class="cw-suggest-list" id="suggestList">
+                        <div class="cw-suggest-item">
+                            <span class="cw-drag-handle"><i class="bi bi-grip-vertical"></i></span>
+                            <span class="cw-suggest-text">About This</span>
+                            <button type="button" class="cw-suggest-del" aria-label="Remove">
+                            <i class="bi bi-trash3"></i>
+                            </button>
+                        </div>
+                        <div class="cw-suggest-item">
+                            <span class="cw-drag-handle"><i class="bi bi-grip-vertical"></i></span>
+                            <span class="cw-suggest-text">FAQ</span>
+                            <button type="button" class="cw-suggest-del" aria-label="Remove">
+                            <i class="bi bi-trash3"></i>
+                            </button>
+                        </div>
+                        <div class="cw-suggest-item">
+                            <span class="cw-drag-handle"><i class="bi bi-grip-vertical"></i></span>
+                            <span class="cw-suggest-text">Explain</span>
+                            <button type="button" class="cw-suggest-del" aria-label="Remove">
+                            <i class="bi bi-trash3"></i>
+                            </button>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="cw-divider"></div>
+
+                    <!-- TOGGLES -->
+                    <div class="cw-section">
+                        <div class="cw-toggle-row">
+                        <div class="cw-toggle-info">
+                            <div class="cw-toggle-label">Show Source Citations</div>
+                            <div class="cw-toggle-desc">Display where answers came from</div>
+                        </div>
+                        <label class="cw-switch">
+                            <input type="checkbox" checked id="toggleCitations">
+                            <span class="cw-slider"></span>
+                        </label>
+                        </div>
+
+                        <div class="cw-toggle-row">
+                        <div class="cw-toggle-info">
+                            <div class="cw-toggle-label">Auto Open Widget</div>
+                            <div class="cw-toggle-desc">Automatically open after delay</div>
+                        </div>
+                        <label class="cw-switch">
+                            <input type="checkbox" id="toggleAutoOpen">
+                            <span class="cw-slider"></span>
+                        </label>
+                        </div>
+
+                        <div class="cw-toggle-row">
+                        <div class="cw-toggle-info">
+                            <div class="cw-toggle-label">Remove Powered By</div>
+                            <div class="cw-toggle-desc">Upgrade your plan to remove this feature</div>
+                        </div>
+                        <label class="cw-switch">
+                            <input type="checkbox" checked id="togglePoweredBy">
+                            <span class="cw-slider"></span>
+                        </label>
+                        </div>
+                    </div>
+
+                    </div><!-- /cw-form-body -->
+
+                    <!-- Voice Widget placeholder -->
+                    <div class="cw-form-body" id="tabVoice" style="display:none">
+                    <div style="display:flex;align-items:center;justify-content:center;height:200px;color:#aaa;font-size:14px;">
+                        Voice Widget settings coming soon.
+                    </div>
+                    </div>
+
+                    <!-- Avatar Widget placeholder -->
+                    <div class="cw-form-body" id="tabAvatar" style="display:none">
+                    <div style="display:flex;align-items:center;justify-content:center;height:200px;color:#aaa;font-size:14px;">
+                        Avatar Widget settings coming soon.
+                    </div>
+                    </div>
+
+                    <!-- Footer buttons -->
+                    <div class="cw-footer">
+                    <button type="button" class="cw-btn-reset" id="cwReset">Reset</button>
+                    <button type="button" class="cw-btn-save" id="cwSave">Save Configuration</button>
+                    </div>
+
+                </div><!-- /design-left -->
+
+                <div class="right-pane">
+                    <h2>Live Preview</h2>
+                    <div class="cw-zoom-select">
+                        <span id="zoomLabel">200%</span>
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                    </div>
+                    <div class="chat" id="chatBox">
+                        <div class="chat-head">
+                            <div class="avatar">A</div>
+                            <div>
+                                <div class="chat-title">Chat with us</div>
+                                <div class="chat-sub">AI Assistant</div>
+                            </div>
+                        </div>
+                        <div class="chat-body">
+                            <div class="bubble">Hi! How can I help you today?</div>
+                        </div>
+                        <div class="chat-actions"><button class="pill">About This</button><button class="pill">FAQ</button><button class="pill">Explain</button></div>
+                        <div class="chat-input"><input type="text" placeholder="Type your message..." /><button class="send-chat"><img src="images/paper-plane-logo.svg" alt="Send chat" /></button></div>
+                        <div class="chat-copyright">
+                            Powered by <img src="images/chatbot-logo.svg" alt="logo-chatbot" />
+                        </div>
+                    </div>
+                    <button class="fab" id="chatToggle"><i class="bi bi-chat-left"></i></button>
+                </div>
+            </section>
+
+            <footer class="footer">
+                <span>Powered by Alpha8OT Studio</span>
+                <span>Privacy Policy &nbsp; &nbsp; &nbsp; © 2026 AlphaBOT Studio</span>
+            </footer>
+        </main>
+    </div>
+
+    <!-- Modal: always present in DOM, hidden via CSS class -->
+    <div class="overlay" id="overlay">
+        <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <div class="top">
+                <div>
+                    <h2 id="modalTitle">Add Documents</h2>
+                    <p class="subtitle">If you are uploading a PDF, make sure you can select/highlight the text.</p>
+                </div>
+                <button class="close" id="closeBtn" aria-label="Close"><img src="images/CloseIcon.svg"></button>
+            </div>
+
+            <input id="fileInput" type="file" multiple accept=".pdf,.doc,.docx,.svg,.png,.jpg,.jpeg,.gif" />
+
+            <div class="dropzone" id="dropzone">
+                <div class="drop-inner" id="uploadLink">
+                    <div class="icon-wrap" aria-hidden="true">
+                        <i><img src="images/upload-icon.svg" /></i>
+                    </div>
+                    <p class="upload-text"><span class="upload-link">Click to upload</span> or drag and drop</p>
+                    <div class="formats">PDF, DOC, DOCX, SVG, PNG, JPG or GIF (max. 800×400px)</div>
+                </div>
+            </div>
+
+            <div class="file-list" id="fileList"></div>
+
+            <div class="progress-wrap" id="progressWrap">
+                <div class="progress-label"><span>Uploading</span><span id="progressPct">0%</span></div>
+                <div class="bar"><span id="progressBar"></span></div>
+            </div>
+
+            <div class="success" id="successMsg">Upload completed successfully.</div>
+
+            <div class="actions">
+                <button class="btn cancel" id="cancelBtn">CANCEL</button>
+                <button class="btn upload" id="uploadBtn">UPLOAD</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS files loaded at end of body -->
+
+    <!-- JS files loaded at end of body -->
+    <script src="source/javascript.js"></script>
+    <script src="source/modal.js"></script>
+    <script src="source/review.js"></script>
+    <script src="source/design.js"></script>
+</body>
+
+</html>
