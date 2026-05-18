@@ -377,14 +377,14 @@
   gap: 10px;
   border: 0.5px solid var(--border);
   border-radius: 8px;
-  padding: 10px 12px;
+  padding: 4px 12px;
   background: #fafafa;
 }
 
 .cw-drag-handle {
   color: #bbb;
   cursor: grab;
-  font-size: 14px;
+  font-size: 28px;
   flex-shrink: 0;
 }
 
