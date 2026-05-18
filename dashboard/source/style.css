@@ -1522,6 +1522,7 @@ select {
   /* margin-bottom: 14px; */
   padding: 8px;
   background-color: #F9F9FA;
+  border-radius: 8px;
 }
 .review-section .actions {
   display: flex;
@@ -1644,6 +1645,7 @@ select {
   color: #777;
   padding-top: 3px;
   align-self: baseline;
+  height: 100%;
 }
 .review-section .dots-btn {
   border: none;

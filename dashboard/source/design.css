@@ -23,6 +23,7 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  padding:8px 22px 0;
 }
 
 /* ── Tabs ── */
@@ -63,7 +64,7 @@
 .cw-form-body {
   flex: 1;
   overflow-y: auto;
-  padding: 24px 24px 120px;
+  padding: 24px 24px 0px;
   scrollbar-width: thin;
   scrollbar-color: #e0e0e0 transparent;
 }
@@ -202,7 +203,7 @@
 .cw-select:focus { border-color: #a78bfa; background: #fff; }
 
 /* ── Text input ── */
-.cw-input {
+.cw-input, .cw-suggest-input{
   width: 100%;
   height: 43px;
   border: 0.5px solid var(--border);
@@ -215,9 +216,11 @@
   outline: none;
   transition: border-color 0.18s;
 }
+.cw-suggest-input{width: 65%;}
+.cw-suggest-form{display:flex;gap:8px;align-items:center;margin-top:8px;margin-bottom:8px;}
 
-.cw-input:focus { border-color: #a78bfa; background: #fff; }
-.cw-input::placeholder { color: #aaa; }
+.cw-input:focus, .cw-suggest-input:focus { border-color: #a78bfa; background: #fff; }
+.cw-input::placeholder, .cw-suggest-input::placeholder { color: #aaa; }
 
 /* ── Number stepper ── */
 .cw-stepper {

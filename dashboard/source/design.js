@@ -142,24 +142,104 @@
   });
 
   /* ── Suggested messages ── */
-  const suggestList  = document.getElementById('suggestList');
-  const cwpPills     = document.getElementById('cwpPills');
-  const addSuggestBtn = document.getElementById('addSuggestBtn');
+//   const suggestList  = document.getElementById('suggestList');
+//   const cwpPills     = document.getElementById('cwpPills');
+//   const addSuggestBtn = document.getElementById('addSuggestBtn');
 
-  function syncPills() {
-    const texts = [...suggestList.querySelectorAll('.cw-suggest-text')].map(s => s.textContent.trim());
-    cwpPills.innerHTML = texts.map(t => `<button class="cwp-pill">${t}</button>`).join('');
-  }
+//   function syncPills() {
+//     const texts = [...suggestList.querySelectorAll('.cw-suggest-text')].map(s => s.textContent.trim());
+//     cwpPills.innerHTML = texts.map(t => `<button class="cwp-pill">${t}</button>`).join('');
+//   }
 
-  suggestList.addEventListener('click', (e) => {
-    const delBtn = e.target.closest('.cw-suggest-del');
-    if (delBtn) { delBtn.closest('.cw-suggest-item').remove(); syncPills(); }
-  });
+// //   suggestList.addEventListener('click', (e) => {
+// //     const delBtn = e.target.closest('.cw-suggest-del');
+// //     if (delBtn) { delBtn.closest('.cw-suggest-item').remove(); syncPills(); }
+// //   });
 
-  if (addSuggestBtn) {
-    addSuggestBtn.addEventListener('click', () => {
-      const text = prompt('Enter suggested message:');
-      if (!text || !text.trim()) return;
+// suggestList.addEventListener('click', (e) => {
+//   const delBtn = e.target.closest('.cw-suggest-del');
+//   if (delBtn) {
+//     if (!confirm('Are you sure you want to remove?')) return;
+//     delBtn.closest('.cw-suggest-item').remove();
+//     syncPills();
+//   }
+// });
+
+
+//   if (addSuggestBtn) {
+//     addSuggestBtn.addEventListener('click', () => {
+//       const text = prompt('Enter suggested message:');
+//       if (!text || !text.trim()) return;
+//       const item = document.createElement('div');
+//       item.className = 'cw-suggest-item';
+//       item.innerHTML = `
+//         <span class="cw-drag-handle"><i class="bi bi-grip-vertical"></i></span>
+//         <span class="cw-suggest-text">${text.trim()}</span>
+//         <button type="button" class="cw-suggest-del" aria-label="Remove"><i class="bi bi-trash3"></i></button>
+//       `;
+//       suggestList.appendChild(item);
+//       syncPills();
+//     });
+//   }
+
+
+
+const suggestList  = document.getElementById('suggestList');
+const cwpPills     = document.getElementById('cwpPills');
+const addSuggestBtn = document.getElementById('addSuggestBtn');
+
+function syncPills() {
+  const texts = [...suggestList.querySelectorAll('.cw-suggest-text')].map(s => s.textContent.trim());
+  cwpPills.innerHTML = texts.map(t => `<button class="cwp-pill">${t}</button>`).join('');
+}
+
+function createFormElement() {
+  const container = document.createElement('div');
+  container.className = 'cw-suggest-form-container';
+  container.innerHTML = `
+    <div class="cw-suggest-form">
+      <input type="text" class="cw-suggest-input" placeholder="Enter suggested message..."/>
+      <button type="button" class="cw-btn-save">Add</button>
+      <button type="button" class="cw-btn-reset">Cancel</button>
+    </div>
+  `;
+  return container;
+}
+
+// Insert form after the button and wire handlers
+if (addSuggestBtn) {
+  addSuggestBtn.addEventListener('click', (e) => {
+    // avoid creating duplicate forms
+    const existing = document.querySelector('.cw-suggest-form-container');
+    if (existing) {
+      const input = existing.querySelector('.cw-suggest-input');
+      input.focus();
+      return;
+    }
+
+    const formEl = createFormElement();
+    // insert immediately after the button
+    addSuggestBtn.after(formEl); // insertAdjacentElement or after() recommended by MDN [web:11]
+
+    const input = formEl.querySelector('.cw-suggest-input');
+    const saveBtn = formEl.querySelector('.cw-suggest-save');
+    const cancelBtn = formEl.querySelector('.cw-suggest-cancel');
+
+    // focus input
+    input.focus();
+
+    function closeForm() {
+      formEl.remove();
+    }
+
+    cancelBtn.addEventListener('click', () => closeForm());
+
+    saveBtn.addEventListener('click', () => {
+      const text = input.value;
+      if (!text || !text.trim()) {
+        input.focus();
+        return;
+      }
       const item = document.createElement('div');
       item.className = 'cw-suggest-item';
       item.innerHTML = `
@@ -169,8 +249,33 @@
       `;
       suggestList.appendChild(item);
       syncPills();
+      closeForm();
     });
+
+    // allow Enter to submit, Escape to cancel
+    input.addEventListener('keydown', (ev) => {
+      if (ev.key === 'Enter') {
+        ev.preventDefault();
+        saveBtn.click();
+      } else if (ev.key === 'Escape') {
+        ev.preventDefault();
+        cancelBtn.click();
+      }
+    });
+  });
+}
+
+// existing delete listener with confirmation
+suggestList.addEventListener('click', (e) => {
+  const delBtn = e.target.closest('.cw-suggest-del');
+  if (delBtn) {
+    if (!confirm('Are you sure you want to remove?')) return;
+    delBtn.closest('.cw-suggest-item').remove();
+    syncPills();
   }
+});
+
+
 
   /* ── Zoom label ── */
   const zoomLabel = document.getElementById('zoomLabel');
