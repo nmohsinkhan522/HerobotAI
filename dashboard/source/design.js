@@ -199,8 +199,8 @@ function createFormElement() {
   container.innerHTML = `
     <div class="cw-suggest-form">
       <input type="text" class="cw-suggest-input" placeholder="Enter suggested message..."/>
-      <button type="button" class="cw-btn-save">Add</button>
-      <button type="button" class="cw-btn-reset">Cancel</button>
+      <button type="button" class="cw-btn-save cw-suggest-save">Add</button>
+      <button type="button" class="cw-btn-reset cw-suggest-cancel">Cancel</button>
     </div>
   `;
   return container;
