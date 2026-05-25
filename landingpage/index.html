@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HeroBot — AI SaaS Landing Page</title>
+  <meta name="description" content="Premium AI SaaS landing page with interactive scroll-driven setup flow." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="source/style.css" />
+</head>
+<body>
+  <!-- <div class="bg-blur bg-blur-1"></div>
+  <div class="bg-blur bg-blur-2"></div> -->
+
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a class="brand" href="#top" aria-label="HeroBot home">
+        <img src="images/logo-color.svg" alt="logo-color" />
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#features">Features</a>
+        <a href="#use-cases">Use Cases</a>
+        <a href="#pricing">Pricing</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="nav-link" href="#pricing">Login</a>
+        <a class="btn btn-primary btn-sm" href="#cta">Get Started</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero section">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <!-- <div class="eyebrow">Test</div> -->
+          <h1>Stop building <span>bots</span>. Start deploying <span>intelligence</span>.</h1>
+          <p class="lead">
+            Herobot transforms static businesses presence into autonomous, human-centric growth. Go live with agentic AI that answers, captures, and converts without a single line of code.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#cta">Deploy Your Agent</a>
+            <a class="btn btn-secondary" href="#pricing">Book Demo</a>
+          </div>
+          <!-- <div class="hero-metrics">
+            <div>
+              <strong>98%</strong>
+              <span>faster response time</span>
+            </div>
+            <div>
+              <strong>24/7</strong>
+              <span>autonomous coverage</span>
+            </div>
+            <div>
+              <strong>3x</strong>
+              <span>more qualified leads</span>
+            </div>
+          </div> -->
+        </div>
+
+        <div class="hero-visual reveal">
+          <div class="video-container">
+            <div class="video-wrapper">
+              <video autoplay muted loop playsinline>
+                <source src="./source/landing-page-hero-video.mp4" type="video/mp4" />
+                <source src="./source/landing-page-hero-video.mp4" type="video/webm" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats section" id="features">
+      <div class="container">
+        <div class="section-heading center reveal">
+          <h2>Why 80% of deployed AI fail</h2>
+          <p>Most bots are just digital filing cabinets. Static. Rule-based. Frustrating.</p>
+        </div>
+
+        <div class="stats-grid">
+          <article class="stat-card reveal">
+            <div class="stat-icon"><img src="images/logo-brain.svg" alt="Automation gap" /></div>
+            <h3>The automation gap:</h3>
+            <p>88% of businesses have deployed solutions without meaningful automation.</p>
+          </article>
+          <article class="stat-card reveal">
+            <div class="stat-icon"><img src="images/logo-speak.svg" alt="Rulebased gap" /></div>
+            <h3>The rule-based gap:</h3>
+            <p>70% of bots today are still rule-based, offering low intelligence and high friction.</p>
+          </article>
+          <article class="stat-card reveal">
+            <div class="stat-icon"><img src="images/logo-rocket.svg" alt="Performance Drop" /></div>
+            <h3>The performance drop:</h3>
+            <p>Accuracy typically plummets to 50% in real-world conversations.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="feature-split section">
+      <h2 ><img src="images/logo-color.svg" />changes the math</h2>
+      <div class="container split-grid">
+        <div class="split-copy reveal">
+          <span class="section-tag"><i class="bi bi-shield-check"></i>Next-Gen Interaction</span>
+          <h2>More human than ever</h2>
+          <p>
+            Our proprietary neural engine powers avatars with realistic micro-expressions and contextual voice inflections. It doesn't just answer—it connects.
+          </p>
+          <ul class="check-list">
+            <li>Low latency (&lt;200ms) for natural flow</li>
+            <li>Supports 50+ languages natively</li>
+          </ul>
+          <div class="mini-table glass">
+            <div class="row head">
+              <span>Pillar</span><span>Capability</span><span>Outcome</span>
+            </div>
+            <div class="row">
+              <span>Instant<br>Evolution</span><span>No developers. No weeks of waiting.</span><span>Go live in minutes, not months.</span>
+            </div>
+            <div class="row">
+              <span>Multimodal <br>Reach</span><span>Chat, voice, and<br> avatar interaction.</span><span>Meet customers where they are.</span>
+            </div>
+            <div class="row">
+              <span>Cognitive Security</span><span>Built on your proprietary architecture.</span><span>Enterprise-grade safety by design.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="split-media reveal">
+          <div class="media-shell glass">
+            <img
+              src="images/img-change-themath.png"
+              alt="Change the math"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- <section class="setup section" id="use-cases">
+      <div class="container">
+        <div class="section-heading center reveal">
+          <h2>Simple Setup. Massive Impact.</h2>
+          <p>Go from zero to live in under 10 minutes.</p>
+        </div>
+
+        <div class="setup-progress glass" id="setupProgress">
+          <div class="progress-track"></div>
+          <div class="progress-fill" id="progressFill"></div>
+
+          <button class="step-pill active" data-step="1" aria-label="Step 1: Data">
+            <span class="num">01</span>
+            <span class="label">DATA</span>
+          </button>
+          <button class="step-pill" data-step="2" aria-label="Step 2: Custom">
+            <span class="num">02</span>
+            <span class="label">CUSTOM</span>
+          </button>
+          <button class="step-pill" data-step="3" aria-label="Step 3: Live">
+            <span class="num">03</span>
+            <span class="label">LIVE</span>
+          </button>
+        </div>
+
+        <div class="setup-steps">
+          <article class="setup-step active reveal-step" data-step-content="1" id="step1">
+            <div class="step-copy">
+              <span class="step-kicker">Step 01</span>
+              <h3>Add Data.</h3>
+              <p>Import your FAQs, knowledge base, or product catalog. HeroBot digests your information to provide accurate, brand-aligned responses.</p>
+              <a href="#" class="inline-link">Connect your CRM or docs</a>
+            </div>
+            <div class="step-art glass">
+              <div class="card-faux card-a"></div>
+              <div class="card-icons">
+                <span>◌</span><span>◈</span><span>▣</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="setup-step reveal-step" data-step-content="2" id="step2">
+            <div class="step-copy">
+              <span class="step-kicker">Step 02</span>
+              <h3>Customize.</h3>
+              <p>Pick your avatar, voice style, and brand personality. Create a unique digital identity that reflects your company’s values.</p>
+              <div class="chip-row">
+                <span class="chip active">Warm Voice</span>
+                <span class="chip">Professional Tone</span>
+                <span class="chip">Multilingual</span>
+              </div>
+            </div>
+            <div class="step-art glass">
+              <div class="card-faux card-b"></div>
+              <div class="big-num">02</div>
+            </div>
+          </article>
+
+          <article class="setup-step reveal-step" data-step-content="3" id="step3">
+            <div class="step-copy">
+              <span class="step-kicker">Step 03</span>
+              <h3>Go Live.</h3>
+              <p>Embed the snippet and watch your sales grow. One line of code is all it takes to deploy your 24/7 high-performance sales agent.</p>
+              <a href="#" class="btn btn-primary">Get Your Code Now</a>
+            </div>
+            <div class="step-art glass code-art">
+              <pre><code>&lt;script&gt;
+window.HeroBot = {
+  theme: "adaptive",
+  mode: "live"
+}
+&lt;/script&gt;</code></pre>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section> -->
+    <!-- Setup Interactive Section -->
+        <section class="setup section setup-section section-padding" id="use-cases">
+            <div class="container text-center section-heading">
+                <h2>Simple Setup. Massive Impact.</h2>
+                <p>Go from zero to live in under 10 minutes.</p>
+            </div>
+
+            <div class="setup-container">
+                <!-- Sticky Progress Tracker -->
+                <div class="sticky-tracker">
+                    <div class="container tracker-flex">
+                        <div class="tracker-line"></div>
+                        <div class="step-dot active" data-target="step-1">
+                            <span class="num">1</span>
+                            <span class="label">01 DATA</span>
+                        </div>
+                        <div class="step-dot" data-target="step-2">
+                            <span class="num">2</span>
+                            <span class="label">02 CUSTOM</span>
+                        </div>
+                        <div class="step-dot" data-target="step-3">
+                            <span class="num">3</span>
+                            <span class="label">03 LIVE</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Scrollable Content -->
+                <div class="container setup-content">
+                    <div class="setup-row " id="step-1">
+                        <div class="setup-text">
+                            <h3 class="step-bg-num">01</h3>
+                            <h2>Add Data.</h2>
+                            <p>Import your FAQs, knowledge base, or product catalog. Herobot digests your information to provide accurate, brand-aligned responses.</p>
+                            <div class="badge gray"><i class="bi bi-database"></i> CONNECT YOUR CRM OR DOCS</div>
+                        </div>
+                        <div class="setup-visual">
+                            <div class="mock-ui">
+                                <img src="images/add-data.png" alt="Add data" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="setup-row reverse" id="step-2">
+                        <div class="setup-text">
+                            <h3 class="step-bg-num">02</h3>
+                            <h2>Customize.</h2>
+                            <p>Pick your avatar, voice style, and brand personality. Create a unique digital identity that perfectly reflects your company's values.</p>
+                            <div class="badge-group">
+                                <span>Warm Voice</span>
+                                <span class="active">Professional Tone</span>
+                                <span>Multilingual</span>
+                            </div>
+                        </div>
+                        <div class="setup-visual">
+                            <div class="mock-ui sliders">
+                                <img src="images/customize.png" alt="Customize" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="setup-row" id="step-3">
+                        <div class="setup-text">
+                            <h3 class="step-bg-num">03</h3>
+                            <h2>Go Live.</h2>
+                            <p>Embed the snippet and watch your sales grow. One line of code is all it takes to deploy your new 24/7 high-performance sales agent.</p>
+                            <a href="#" class="btn btn-primary">Get Your Code Now</a>
+                        </div>
+                        <div class="setup-visual">
+                            <div class="mock-ui code">
+                                <img src="images/golive.png" alt="Go live" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <section class="industry section">
+      <div class="container">
+        <div class="section-heading center reveal">
+          <h2>Built for Every Industry</h2>
+          <p>Herobot adapts its tone and expertise to match your specific vertical needs.</p>
+        </div>
+
+        <div class="industry-grid">
+          <article class="industry-card reveal">
+            <img src="images/icon-hat.svg" alt="Real Time Learning" />
+            <h3>REAL TIME LEARNING:</h3>
+            <p>Unlike traditional bots, Herobot leans from every interaction, closing the gap between FAQ and reality.</p>
+          </article>
+          <article class="industry-card reveal">
+            <img src="images/icon-bod.svg" alt="Real Time Learning" />
+            <h3>24/7 CONVERSION:</h3>
+            <p>Don't just answer questions, capture leads and close sales while you sleep.</p>
+          </article>
+          <article class="industry-card reveal">
+            <img src="images/icon-hat.svg" alt="Real Time Learning" />
+            <h3>ZERO FRICTION:</h3>
+            <p>Seamlessly customise and embed to your existing website.</p>
+          </article>
+          <article class="industry-card reveal">
+            <img src="images/icon-shield.svg" alt="Real Time Learning" />
+            <h3>SECURE:</h3>
+            <p>Every Herobot instance is hardened by cognitive security testing, ensuring your data remains your own.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="pricing section" id="pricing">
+  <div class="container">
+    <div class="section-heading center reveal">
+      <h2>Built by Architects. Not just Coders.</h2>
+      <p>Simple, transparent pricing for teams of all sizes.</p>
+    </div>
+
+    <div class="pricing-toggle glass reveal">
+      <span id="monthly-label" class="active" onclick="setPricing(false)">Monthly</span>
+      <span id="yearly-label" onclick="setPricing(true)">Yearly</span>
+    </div>
+
+    <div class="pricing-grid">
+      <article class="price-card reveal selected-plan">
+        <h3>Free Tier</h3>
+        <div class="price">
+          <span class="amount" data-monthly="$0" data-yearly="$0">$0</span>
+          <span class="plan-period vhidden">per month, billed <span>monthly</span></span>
+        </div>
+        <a class="btn btn-secondary" href="#">Cancel Plan</a>
+        <b>3-MONTH PERIOD ONLY</b>
+        <ul>
+          <li>Limited access to <strong>&nbsp; Chat &nbsp;</strong> only</li>
+          <li>Up to 50 conversations per month (question and answer)</li>
+          <li>Single member access</li>
+          <li>5 pages of information*</li>
+        </ul>
+      </article>
+
+      <article class="price-card reveal">
+        <h3>Starter Plan</h3>
+        <div class="price">
+          <span class="amount" data-monthly="$39" data-yearly="$390">$39</span>
+          <span class="plan-period">per month, billed <span>monthly</span></span>
+        </div>
+        <a class="btn btn-secondary" href="#">Upgrade</a>
+        <b>EVERYTHING IN FREE-Tier +</b>
+        <ul>
+          <li>Advanced access to chat and voice only</li>
+          <li>Up to 100 conversations per month (input and output)</li>
+          <li>2-member access</li>
+          <li>10 pages of information*</li>
+          <li>Integrations via API</li>
+          <li>Analytics</li>
+        </ul>
+      </article>
+
+      <article class="price-card reveal">
+        <h3>Growth Plan</h3>
+        <div class="price">
+          <span class="amount" data-monthly="$132" data-yearly="$1320">$132</span>
+          <span class="plan-period">per month, billed <span>monthly</span></span>
+        </div>
+        <a class="btn btn-secondary" href="#">Upgrade</a>
+        <B>EVERYTHING IN STARTER Plan +</B>
+        <ul>
+          <li>Advanced access to Chat, Voice and Digital Avatar</li>
+          <li>Choice of advanced voice selection**</li>
+          <li>Up to 1000 conversations per month (question and answer)</li>
+          <li>Up to 10-member access</li>
+          <li>30 pages of information*</li>
+          <li>Integrations</li>
+          <li>Analytics</li>
+          <li>Additional data upload feature</li>
+          <li>Enterprise Support</li>
+        </ul>
+      </article>
+
+      <article class="price-card reveal">
+        <h3>Pro Plan</h3>
+        <div class="price">
+          <span class="amount" data-monthly="$332" data-yearly="$3320">$332</span>
+          <span class="plan-period">per month, billed <span>monthly</span></span>
+        </div>
+        <a class="btn btn-secondary" href="#">Upgrade</a>
+        <b>EVERYTHING IN Growth PLAN +</b>
+        <ul>
+          <li>Advanced access to Chat, Voice and Digital Avatar</li>
+          <li>Choice of advanced voice selection**</li>
+          <li>Up to 1000 conversations per month (question and answer)</li>
+          <li>Up to 10-member access</li>
+          <li>30 pages of information*</li>
+          <li>Integrations</li>
+          <li>Analytics</li>
+          <li>Additional data upload feature</li>
+          <li>Enterprise Support</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+    <section class="cta section" id="cta">
+      <div class="container">
+        <div class="cta-banner reveal">
+          <h2>Ready to give your business a voice?</h2>
+          <p>Just the revolution toward agentic intelligence</p>
+          <a class="btn btn-light" href="#">Get Started for Free</a>
+          <small>No credit card required. No-code setup.</small>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <a class="brand" href="#top">
+        <img src="images/logo-color.svg" alt="logo-color" />
+      </a>
+
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Contact Us</a>
+        <a href="#">Careers</a>
+      </div>
+
+      <p>&copy; 2026 Herobot. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="source/script.js"></script>
+</body>
+</html>
