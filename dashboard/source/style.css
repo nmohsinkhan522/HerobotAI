@@ -506,6 +506,7 @@ select {
 	place-items: center;
 	position: relative;
 	width: 50%;
+	height: 83.7vh;
 }
 
 .empty {
@@ -1790,7 +1791,7 @@ select {
 }
 .review-section .chat {
   position: absolute;
-  right: 32px;
+  right: -6px;
   bottom: 97px;
   width: 300px;
   background: #fff;
@@ -1906,7 +1907,7 @@ select {
 }
 .review-section .fab {
   position: absolute;
-  right: 26px;
+  right: -6px;
   bottom: 24px;
   width: 60px;
   height: 60px;

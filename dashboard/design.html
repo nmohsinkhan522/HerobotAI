@@ -413,19 +413,493 @@
 
                     </div><!-- /cw-form-body -->
 
-                    <!-- Voice Widget placeholder -->
+                    <!-- Voice Widget Tab -->
                     <div class="cw-form-body" id="tabVoice" style="display:none">
-                    <div style="display:flex;align-items:center;justify-content:center;height:200px;color:#aaa;font-size:14px;">
-                        Voice Widget settings coming soon.
-                    </div>
-                    </div>
+                      <div class="vw-section">
+                        <div class="vw-head">
+                          <h3>VOICE CONFIGURATION</h3>
+                          <label class="vw-switch-row">
+                            <span>Use Voice Feature</span>
+                            <label class="vw-switch">
+                              <input type="checkbox" id="voiceFeatureToggle" checked>
+                              <span class="cw-slider"></span>
+                            </label>
+                          </label>
+                        </div>
+                      </div>
+                      <div class="voice-widget-panel">
 
-                    <!-- Avatar Widget placeholder -->
+                        <!-- Voice Configuration -->
+                        <div class="vw-section">
+                          
+
+                          <div class="vw-field vw-mode-field">
+                            <label>Mode</label>
+                            <div class="vw-select-wrap">
+                              <select class="vw-select" id="voiceMode">
+                                <option selected>Chat Bubble</option>
+                                <option>Full Screen</option>
+                                <option>Floating</option>
+                              </select>
+                            </div>
+                          </div>
+
+                          <div class="vw-field">
+                            <label>Language</label>
+                            <div class="vw-select-wrap">
+                              <select class="vw-select" id="voiceLanguage">
+                                <option selected>English (US)</option>
+                                <option>English (UK)</option>
+                                <option>Hindi</option>
+                                <option>Spanish</option>
+                                <option>French</option>
+                                <option>German</option>
+                              </select>
+                            </div>
+                          </div>
+
+                          <!-- Voice Avatars -->
+                          <div class="vw-voices">
+                            <div class="vw-col">
+                              <div class="vw-col-title">Female</div>
+
+                              <label class="vw-voice-card active">
+                                <input type="radio" name="voiceSelect" value="lucy" checked>
+                                <span class="vw-radio"></span>
+                                <span class="vw-avatar-circle vw-avatar-f1"></span>
+                                <span class="vw-name">Lucy</span>
+                                <button type="button" class="vw-play active" aria-label="Play Lucy"><i class="bi bi-pause-fill"></i></button>
+                              </label>
+
+                              <label class="vw-voice-card">
+                                <input type="radio" name="voiceSelect" value="martha">
+                                <span class="vw-radio"></span>
+                                <span class="vw-avatar-circle vw-avatar-f2"></span>
+                                <span class="vw-name">Martha</span>
+                                <button type="button" class="vw-play" aria-label="Play Martha"><i class="bi bi-play-fill"></i></button>
+                              </label>
+
+                              <label class="vw-voice-card">
+                                <input type="radio" name="voiceSelect" value="sara">
+                                <span class="vw-radio"></span>
+                                <span class="vw-avatar-circle vw-avatar-f3"></span>
+                                <span class="vw-name">Sara</span>
+                                <button type="button" class="vw-play" aria-label="Play Sara"><i class="bi bi-play-fill"></i></button>
+                              </label>
+
+                              <label class="vw-voice-card">
+                                <input type="radio" name="voiceSelect" value="sandra">
+                                <span class="vw-radio"></span>
+                                <span class="vw-avatar-circle vw-avatar-f4"></span>
+                                <span class="vw-name">Sandra</span>
+                                <button type="button" class="vw-play" aria-label="Play Sandra"><i class="bi bi-play-fill"></i></button>
+                              </label>
+                            </div>
+
+                            <div class="vw-col">
+                              <div class="vw-col-title">Male</div>
+
+                              <label class="vw-voice-card">
+                                <input type="radio" name="voiceSelect" value="ingersol">
+                                <span class="vw-radio"></span>
+                                <span class="vw-avatar-circle vw-avatar-m1"></span>
+                                <span class="vw-name">Ingersol</span>
+                                <button type="button" class="vw-play" aria-label="Play Ingersol"><i class="bi bi-play-fill"></i></button>
+                              </label>
+
+                              <label class="vw-voice-card">
+                                <input type="radio" name="voiceSelect" value="rahul">
+                                <span class="vw-radio"></span>
+                                <span class="vw-avatar-circle vw-avatar-m2"></span>
+                                <span class="vw-name">Rahul</span>
+                                <button type="button" class="vw-play" aria-label="Play Rahul"><i class="bi bi-play-fill"></i></button>
+                              </label>
+
+                              <label class="vw-voice-card">
+                                <input type="radio" name="voiceSelect" value="vivek">
+                                <span class="vw-radio"></span>
+                                <span class="vw-avatar-circle vw-avatar-m3"></span>
+                                <span class="vw-name">Vivek</span>
+                                <button type="button" class="vw-play" aria-label="Play Vivek"><i class="bi bi-play-fill"></i></button>
+                              </label>
+
+                              <label class="vw-voice-card">
+                                <input type="radio" name="voiceSelect" value="mohsin">
+                                <span class="vw-radio"></span>
+                                <span class="vw-avatar-circle vw-avatar-m4"></span>
+                                <span class="vw-name">Mohsin</span>
+                                <button type="button" class="vw-play" aria-label="Play Mohsin"><i class="bi bi-play-fill"></i></button>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="cw-divider"></div>
+
+                        <!-- Voice Controls -->
+                        <div class="vw-section">
+                          <h3>VOICE CONTROLS</h3>
+                          <div class="vw-controls">
+                            <div class="vw-control">
+                              <div class="vw-control-label">Speech Speed</div>
+                              <div class="vw-range-row">
+                                <span>Slow</span>
+                                <input type="range" min="0" max="100" value="40" id="speechSpeed" class="vw-range">
+                                <span id="speechSpeedVal">1.0x</span>
+                              </div>
+                            </div>
+                            <div class="vw-control">
+                              <div class="vw-control-label">Pitch</div>
+                              <div class="vw-range-row">
+                                <span>Slow</span>
+                                <input type="range" min="0" max="100" value="80" id="pitchSpeed" class="vw-range vw-range-2">
+                                <span id="pitchSpeedVal">1.0x</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="cw-divider"></div>
+
+                        <!-- Audio Settings -->
+                        <div class="vw-section">
+                          <h3>AUDIO SETTINGS</h3>
+                          <div class="vw-audio-grid">
+                            <div class="vw-field">
+                              <label class="vw-field-label">Select Microphone</label>
+                              <div class="vw-select-wrap vw-mic-select">
+                                <select class="vw-select" id="microphoneSelect">
+                                  <option selected>Built in Microphone</option>
+                                  <option>External Microphone</option>
+                                  <option>Headset Microphone</option>
+                                </select>
+                              </div>
+                            </div>
+
+                            <div class="vw-field">
+                              <label class="vw-field-label">Welcome Message</label>
+                              <input type="text" class="vw-input" id="voiceWelcomeMsg" value="Hi! How can I help you today?....">
+                            </div>
+
+                            <div class="vw-field">
+                              <label class="vw-field-label">Audio</label>
+                              <div class="vw-toggle-input">
+                                <input type="text" class="vw-input" value="Voice Input" readonly>
+                                <label class="vw-mini-switch">
+                                  <input type="checkbox" id="audioToggle" checked>
+                                  <span class="cw-slider"></span>
+                                </label>
+                              </div>
+                            </div>
+
+                            <div class="vw-field">
+                              <label class="vw-field-label">Response Mode</label>
+                              <div class="vw-select-wrap">
+                                <select class="vw-select" id="responseModeSelect">
+                                  <option selected>Chat with Voice</option>
+                                  <option>Voice Only</option>
+                                  <option>Text + Voice</option>
+                                </select>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="vw-bottom-toggles">
+                            <label class="vw-check">
+                              <input type="checkbox" id="noiseReduction" checked>
+                              <span class="cw-slider"></span>
+                              <span class="vw-check-span">Noise Reduction</span>
+                            </label>
+                            <label class="vw-check">
+                              <input type="checkbox" id="echoCancellation">
+                              <span class="cw-slider"></span>
+                              <span class="vw-check-span">Echo Cancellation</span>
+                            </label>
+                          </div>
+                        </div>
+
+                      </div><!-- /voice-widget-panel -->
+                    </div><!-- /tabVoice -->
+
+                                        <!-- Avatar Widget Tab -->
                     <div class="cw-form-body" id="tabAvatar" style="display:none">
-                    <div style="display:flex;align-items:center;justify-content:center;height:200px;color:#aaa;font-size:14px;">
-                        Avatar Widget settings coming soon.
-                    </div>
-                    </div>
+                      <!-- Header -->
+                        <div class="aw-head">
+                          <h3>AVATAR CONFIGURATION</h3>
+                          <label class="vw-switch-row">
+                            <span>Use Avatar Feature</span>
+                            <label class="vw-switch">
+                              <input type="checkbox" id="avatarFeatureToggle" checked>
+                              <span class="cw-slider"></span>
+                            </label>
+                          </label>
+                        </div>
+
+
+                      <div class="aw-panel">
+                        <!-- Ethnicity -->
+                        <div class="aw-field">
+                          <label class="aw-label">Ethnicity</label>
+                          <div class="vw-select-wrap">
+                            <select class="vw-select" id="avatarEthnicity">
+                              <option>African</option>
+                              <option>Asian</option>
+                              <option>Caucasian</option>
+                              <option selected>Indian</option>
+                              <option>Latino</option>
+                              <option>Middle Eastern</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <!-- Appearance toggle -->
+                        <div class="aw-field">
+                          <label class="aw-label">Appearance</label>
+                          <div class="aw-btn-group" id="appearanceGroup">
+                            <button type="button" class="aw-btn-opt" data-val="full">Full Body</button>
+                            <button type="button" class="aw-btn-opt active" data-val="half">Half Body</button>
+                            <button type="button" class="aw-btn-opt" data-val="face">Face Only</button>
+                          </div>
+                        </div>
+
+                        <!-- Gender tabs -->
+                        <div class="aw-gender-tabs">
+                          <button type="button" class="aw-gender-tab" id="genderFemale">Female</button>
+                          <span class="aw-gender-sep">|</span>
+                          <button type="button" class="aw-gender-tab active" id="genderMale">Male</button>
+                        </div>
+
+                        <!-- Avatar Carousel -->
+                        <div class="aw-carousel-wrap">
+                          <button type="button" class="aw-carousel-arrow aw-prev" id="awPrev" aria-label="Previous">
+                            <i class="bi bi-chevron-left"></i>
+                          </button>
+                          <div class="aw-carousel" id="awCarousel">
+                            <div class="aw-char-slide" data-idx="0">
+                              <div class="aw-char-figure aw-char-c1"></div>
+                            </div>
+                            <div class="aw-char-slide" data-idx="1">
+                              <div class="aw-char-figure aw-char-c2"></div>
+                            </div>
+                            <div class="aw-char-slide aw-char-selected" data-idx="2">
+                              <div class="aw-char-figure aw-char-c3"></div>
+                            </div>
+                            <div class="aw-char-slide" data-idx="3">
+                              <div class="aw-char-figure aw-char-c4"></div>
+                            </div>
+                            <div class="aw-char-slide" data-idx="4">
+                              <div class="aw-char-figure aw-char-c5"></div>
+                            </div>
+                          </div>
+                          <button type="button" class="aw-carousel-arrow aw-next" id="awNext" aria-label="Next">
+                            <i class="bi bi-chevron-right"></i>
+                          </button>
+                        </div>
+
+                        <!-- Style -->
+                        <div class="aw-field">
+                          <label class="aw-label">Style</label>
+                          <div class="aw-btn-group" id="styleGroup">
+                            <button type="button" class="aw-btn-opt active" data-val="formal">Formal</button>
+                            <button type="button" class="aw-btn-opt" data-val="casual">Casual</button>
+                            <button type="button" class="aw-btn-opt" data-val="native">Native</button>
+                          </div>
+                        </div>
+
+                        <div class="cw-divider"></div>
+
+                        <!-- Character Animation -->
+                        <div class="aw-anim-section">
+                          <div class="aw-anim-head">
+                            <span class="aw-label">Character Animation On Inactive Mode</span>
+                            <label class="aw-deselect-all">
+                              <span>Deselect All</span>
+                              <input type="checkbox" id="awDeselectAll" checked>
+                              <span class="aw-check-box"><i class="bi bi-check2"></i></span>
+                            </label>
+                          </div>
+                          <div class="aw-anim-list">
+                            <label class="aw-anim-item">
+                              <input type="checkbox" class="aw-anim-cb" checked> <span class="aw-check-box"><i class="bi bi-check2"></i></span> Waving
+                            </label>
+                            <span class="aw-anim-sep">|</span>
+                            <label class="aw-anim-item">
+                              <input type="checkbox" class="aw-anim-cb" checked> <span class="aw-check-box"><i class="bi bi-check2"></i></span> Winking
+                            </label>
+                            <span class="aw-anim-sep">|</span>
+                            <label class="aw-anim-item">
+                              <input type="checkbox" class="aw-anim-cb" checked> <span class="aw-check-box"><i class="bi bi-check2"></i></span> Moving
+                            </label>
+                            <span class="aw-anim-sep">|</span>
+                            <label class="aw-anim-item">
+                              <input type="checkbox" class="aw-anim-cb" checked> <span class="aw-check-box"><i class="bi bi-check2"></i></span> Shaking
+                            </label>
+                          </div>
+                        </div>
+
+                        <div class="cw-divider"></div>
+
+                        <!-- Animation Settings -->
+                        <div class="aw-section">
+                          <h4 class="aw-section-title">ANIMATION SETTINGS</h4>
+                          <div class="aw-settings-grid">
+
+                            <div class="aw-setting-field">
+                              <label class="aw-label">Avatar Size <span class="aw-info-icon" title="Size of the avatar character"><i class="bi bi-info-circle"></i></span></label>
+                              <div class="cw-stepper">
+                                <button type="button" class="cw-stepper-btn" data-action="dec" data-target="awAvatarSize">−</button>
+                                <input type="number" class="cw-stepper-input" id="awAvatarSize" value="80" min="40" max="200">
+                                <button type="button" class="cw-stepper-btn" data-action="inc" data-target="awAvatarSize">+</button>
+                              </div>
+                            </div>
+
+                            <div class="aw-setting-field">
+                              <label class="aw-label">Button Size</label>
+                              <div class="cw-stepper">
+                                <button type="button" class="cw-stepper-btn" data-action="dec" data-target="awBtnSize">−</button>
+                                <input type="number" class="cw-stepper-input" id="awBtnSize" value="60" min="40" max="100">
+                                <button type="button" class="cw-stepper-btn" data-action="inc" data-target="awBtnSize">+</button>
+                              </div>
+                            </div>
+
+                            <div class="aw-setting-field">
+                              <label class="aw-label">Inactive Timeout</label>
+                              <div class="vw-select-wrap">
+                                <select class="vw-select" id="awInactiveTimeout">
+                                  <option>5 Sec</option>
+                                  <option selected>10 Sec</option>
+                                  <option>15 Sec</option>
+                                  <option>30 Sec</option>
+                                  <option>60 Sec</option>
+                                </select>
+                              </div>
+                            </div>
+
+                            <div class="aw-setting-field">
+                              <label class="aw-label">Animation Type</label>
+                              <div class="vw-select-wrap">
+                                <select class="vw-select" id="awAnimType">
+                                  <option selected>Slide In</option>
+                                  <option>Fade In</option>
+                                  <option>Bounce</option>
+                                  <option>Zoom In</option>
+                                </select>
+                              </div>
+                            </div>
+
+                            <div class="aw-setting-field">
+                              <label class="aw-label">Sleep Behaviour</label>
+                              <div class="vw-select-wrap">
+                                <select class="vw-select" id="awSleepBehaviour">
+                                  <option selected>Dim Avatar</option>
+                                  <option>Hide Avatar</option>
+                                  <option>Freeze</option>
+                                </select>
+                              </div>
+                            </div>
+
+                            <div class="aw-setting-field">
+                              <label class="aw-label">Change To Active</label>
+                              <div class="vw-select-wrap">
+                                <select class="vw-select" id="awChangeActive">
+                                  <option selected>Hover</option>
+                                  <option>Click</option>
+                                  <option>Message</option>
+                                </select>
+                              </div>
+                            </div>
+
+                            <div class="aw-setting-field">
+                              <label class="aw-label">Animation Speed</label>
+                              <div class="vw-select-wrap">
+                                <select class="vw-select" id="awAnimSpeed">
+                                  <option>Slow</option>
+                                  <option selected>Normal</option>
+                                  <option>Fast</option>
+                                </select>
+                              </div>
+                            </div>
+
+                            <div class="aw-setting-field">
+                              <label class="aw-label">Animation Duration</label>
+                              <div class="vw-select-wrap">
+                                <select class="vw-select" id="awAnimDuration">
+                                  <option>1 Sec</option>
+                                  <option>2 Sec</option>
+                                  <option selected>3 Sec</option>
+                                  <option>5 Sec</option>
+                                </select>
+                              </div>
+                            </div>
+
+                            <div class="aw-setting-field">
+                              <label class="aw-label">Character Position</label>
+                              <div class="vw-select-wrap">
+                                <select class="vw-select" id="awCharPosition">
+                                  <option selected>Left</option>
+                                  <option>Right</option>
+                                  <option>Center</option>
+                                </select>
+                              </div>
+                            </div>
+
+                            <div class="aw-setting-field">
+                              <label class="aw-label">Auto Pop Out</label>
+                              <div class="vw-select-wrap">
+                                <select class="vw-select" id="awAutoPopOut">
+                                  <option selected>Yes</option>
+                                  <option>No</option>
+                                </select>
+                              </div>
+                            </div>
+
+                            <div class="aw-setting-field">
+                              <label class="aw-label">Avatar Message Bubble</label>
+                              <div class="vw-select-wrap">
+                                <select class="vw-select" id="awMsgBubble">
+                                  <option selected>Yes</option>
+                                  <option>No</option>
+                                </select>
+                              </div>
+                            </div>
+
+                            <div class="aw-setting-field">
+                              <label class="aw-label">Message Bubble <span class="aw-info-icon" title="Control bubble visibility"><i class="bi bi-info-circle"></i></span></label>
+                              <div class="vw-select-wrap">
+                                <select class="vw-select" id="awMsgBubbleVis">
+                                  <option selected>Show</option>
+                                  <option>Hide</option>
+                                  <option>Auto</option>
+                                </select>
+                              </div>
+                            </div>
+
+                            <div class="aw-setting-field">
+                              <label class="aw-label">Response Mode</label>
+                              <div class="vw-select-wrap">
+                                <select class="vw-select" id="awResponseMode">
+                                  <option selected>Avatar with Chat</option>
+                                  <option>Avatar Only</option>
+                                  <option>Chat Only</option>
+                                </select>
+                              </div>
+                            </div>
+
+                            <div class="aw-setting-field">
+                              <label class="aw-label">Dummy Text</label>
+                              <div class="vw-select-wrap">
+                                <select class="vw-select" id="awDummyText">
+                                  <option selected>Show</option>
+                                  <option>Hide</option>
+                                </select>
+                              </div>
+                            </div>
+
+                          </div>
+                        </div>
+
+                      </div><!-- /aw-panel -->
+                    </div><!-- /tabAvatar -->
 
                     <!-- Footer buttons -->
                     <div class="cw-footer">
@@ -435,30 +909,78 @@
 
                 </div><!-- /design-left -->
 
-                <div class="right-pane">
+                <div class="right-pane" id="rightPane">
                     <h2>Live Preview</h2>
                     <div class="cw-zoom-select">
                         <span id="zoomLabel">200%</span>
                         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
                     </div>
-                    <div class="chat" id="chatBox">
-                        <div class="chat-head">
-                            <div class="avatar">A</div>
-                            <div>
-                                <div class="chat-title">Chat with us</div>
-                                <div class="chat-sub">AI Assistant</div>
-                            </div>
-                        </div>
-                        <div class="chat-body">
-                            <div class="bubble">Hi! How can I help you today?</div>
-                        </div>
-                        <div class="chat-actions"><button class="pill">About This</button><button class="pill">FAQ</button><button class="pill">Explain</button></div>
-                        <div class="chat-input"><input type="text" placeholder="Type your message..." /><button class="send-chat"><img src="images/paper-plane-logo.svg" alt="Send chat" /></button></div>
-                        <div class="chat-copyright">
-                            Powered by <img src="images/chatbot-logo.svg" alt="logo-chatbot" />
-                        </div>
+
+                    <!-- Chat Widget Preview (default) -->
+                    <div class="rp-chat-preview" id="rpChatPreview">
+                      <div class="chat" id="chatBox">
+                          <div class="chat-head">
+                              <div class="avatar">A</div>
+                              <div>
+                                  <div class="chat-title">Chat with us</div>
+                                  <div class="chat-sub">AI Assistant</div>
+                              </div>
+                          </div>
+                          <div class="chat-body">
+                              <div class="bubble">Hi! How can I help you today?</div>
+                          </div>
+                          <div class="chat-actions"><button class="pill">About This</button><button class="pill">FAQ</button><button class="pill">Explain</button></div>
+                          <div class="chat-input"><input type="text" placeholder="Type your message..." /><button class="send-chat"><img src="images/paper-plane-logo.svg" alt="Send chat" /></button></div>
+                          <div class="chat-copyright">
+                              Powered by <img src="images/chatbot-logo.svg" alt="logo-chatbot" />
+                          </div>
+                      </div>
+                      <button class="fab" id="chatToggle"><i class="bi bi-chat-left"></i></button>
                     </div>
-                    <button class="fab" id="chatToggle"><i class="bi bi-chat-left"></i></button>
+
+                    <!-- Avatar Widget Preview -->
+                    <div class="rp-avatar-preview" id="rpAvatarPreview" style="display:none;">
+                      <!-- Avatar Character -->
+                      <div class="avp-character-wrap" id="avpCharWrap">
+                        <div class="avp-character avp-char-c3" id="avpCharacter"></div>
+                      </div>
+
+                      <!-- Chat Bubble (half-body / full mode) -->
+                      <div class="avp-chat-card" id="avpChatCard">
+                        <div class="avp-chat-header">
+                          <div class="avp-chat-avatar">A</div>
+                          <div>
+                            <div class="avp-chat-title" id="avpTitle">Chat with us</div>
+                            <div class="avp-chat-sub" id="avpSub">AI Assistant</div>
+                          </div>
+                        </div>
+                        <div class="avp-chat-body" id="avpChatBody">
+                          <div class="avp-bot-msg">
+                            <span class="avp-bot-icon">
+                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7a4bd0" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+                            </span>
+                            <span class="avp-bot-text">Hi! How can I help you today?</span>
+                          </div>
+                        </div>
+                        <div class="avp-chat-input-row">
+                          <input type="text" class="avp-chat-input" placeholder="Type your message...">
+                          <button class="avp-send-btn">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6038B3" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                          </button>
+                          <button class="avp-mic-btn">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+                          </button>
+                        </div>
+                        <div class="avp-powered">Powered by <strong>HER<span style="color:#6038B3">O</span>BOT</strong></div>
+                      </div>
+
+                      <!-- FAB buttons for avatar mode -->
+                      <div class="avp-fab-row" id="avpFabRow">
+                        <button class="avp-fab-outline"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6038B3" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></button>
+                        <button class="avp-fab-solid"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg></button>
+                      </div>
+                    </div>
+
                 </div>
             </section>
 

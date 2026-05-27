@@ -38,6 +38,19 @@
   const tabs = document.querySelectorAll('.cw-tab');
   const tabPanels = { chat: 'tabChat', voice: 'tabVoice', avatar: 'tabAvatar' };
 
+  function switchRightPane(tabName) {
+    const rpChat = document.getElementById('rpChatPreview');
+    const rpAvatar = document.getElementById('rpAvatarPreview');
+    if (!rpChat || !rpAvatar) return;
+    if (tabName === 'avatar') {
+      rpChat.style.display = 'none';
+      rpAvatar.style.display = 'flex';
+    } else {
+      rpChat.style.display = '';
+      rpAvatar.style.display = 'none';
+    }
+  }
+
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
       tabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
@@ -49,8 +62,92 @@
       });
       const panel = document.getElementById(tabPanels[tab.dataset.tab]);
       if (panel) panel.style.display = 'block';
+      switchRightPane(tab.dataset.tab);
     });
   });
+
+
+/* Voice Widget */
+
+const voiceToggle = document.getElementById('voiceFeatureToggle');
+const voicePanel = document.querySelector('.voice-widget-panel');
+const voiceCards = document.querySelectorAll('.vw-voice-card');
+
+function resetAllVoiceCards() {
+  voiceCards.forEach(c => {
+    c.classList.remove('active');
+    const btn = c.querySelector('.vw-play');
+    const icon = c.querySelector('.vw-play i');
+    if (btn) btn.classList.remove('active');
+    if (icon) icon.className = 'bi bi-play-fill';
+  });
+}
+
+voiceCards.forEach(card => {
+  card.addEventListener('click', (e) => {
+    // Don't double-fire if play button was clicked
+    if (e.target.closest('.vw-play')) return;
+    resetAllVoiceCards();
+    card.classList.add('active');
+    const playBtn = card.querySelector('.vw-play');
+    if (playBtn) {
+      playBtn.classList.add('active');
+      const icon = playBtn.querySelector('i');
+      if (icon) icon.className = 'bi bi-pause-fill';
+    }
+  });
+});
+
+document.querySelectorAll('.vw-play').forEach(btn => {
+  btn.addEventListener('click', e => {
+    e.stopPropagation();
+    const card = btn.closest('.vw-voice-card');
+    if (!card) return;
+    const wasActive = btn.classList.contains('active');
+    resetAllVoiceCards();
+    if (!wasActive) {
+      card.classList.add('active');
+      btn.classList.add('active');
+      const icon = btn.querySelector('i');
+      if (icon) icon.className = 'bi bi-pause-fill';
+    }
+  });
+});
+
+if (voiceToggle && voicePanel) {
+  voiceToggle.addEventListener('change', () => {
+    voicePanel.classList.toggle('voice-disabled', !voiceToggle.checked);
+  });
+}
+
+/* Range slider live value display */
+const speechSpeed = document.getElementById('speechSpeed');
+const speechSpeedVal = document.getElementById('speechSpeedVal');
+const pitchSpeed = document.getElementById('pitchSpeed');
+const pitchSpeedVal = document.getElementById('pitchSpeedVal');
+
+function rangeToSpeed(val) {
+  return (0.5 + (val / 100) * 1.5).toFixed(1) + 'x';
+}
+
+if (speechSpeed && speechSpeedVal) {
+  speechSpeed.addEventListener('input', () => {
+    speechSpeedVal.textContent = rangeToSpeed(speechSpeed.value);
+    const pct = speechSpeed.value + '%';
+    speechSpeed.style.background = `linear-gradient(to right, #7acdb8 0%, #7acdb8 ${pct}, #e5e7eb ${pct}, #e5e7eb 100%)`;
+  });
+}
+
+if (pitchSpeed && pitchSpeedVal) {
+  pitchSpeed.addEventListener('input', () => {
+    pitchSpeedVal.textContent = rangeToSpeed(pitchSpeed.value);
+    const pct = pitchSpeed.value + '%';
+    pitchSpeed.style.background = `linear-gradient(to right, #7acdb8 0%, #7acdb8 ${pct}, #e5e7eb ${pct}, #e5e7eb 100%)`;
+  });
+}
+
+/* Voice Widget end */
+  
 
   /* ── Color pickers sync ── */
   function bindColorPair(swatchId, hexId, onUpdate) {
@@ -314,5 +411,168 @@ suggestList.addEventListener('click', (e) => {
       cwpWindow.style.borderRadius = borderRadiusInput.value + 'px';
     });
   }
+
+
+
+/* ═══════════════════════════════════════════
+   AVATAR WIDGET JS
+═══════════════════════════════════════════ */
+(function() {
+
+  /* --- Feature toggle --- */
+  const avatarFeatureToggle = document.getElementById('avatarFeatureToggle');
+  const awPanel = document.querySelector('.aw-panel');
+  if (avatarFeatureToggle && awPanel) {
+    avatarFeatureToggle.addEventListener('change', () => {
+      awPanel.classList.toggle('aw-disabled', !avatarFeatureToggle.checked);
+    });
+  }
+
+  /* --- Appearance pill group (Full Body / Half Body / Face Only) --- */
+  function bindBtnGroup(groupId, onSelect) {
+    const group = document.getElementById(groupId);
+    if (!group) return;
+    group.querySelectorAll('.aw-btn-opt').forEach(btn => {
+      btn.addEventListener('click', () => {
+        group.querySelectorAll('.aw-btn-opt').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        if (onSelect) onSelect(btn.dataset.val);
+      });
+    });
+  }
+
+  bindBtnGroup('appearanceGroup', (val) => {
+    const rp = document.getElementById('rpAvatarPreview');
+    if (!rp) return;
+    rp.classList.remove('mode-full', 'mode-half', 'mode-face');
+    rp.classList.add('mode-' + val);
+  });
+
+  bindBtnGroup('styleGroup', () => {});
+
+  /* --- Gender tabs --- */
+  const genderFemale = document.getElementById('genderFemale');
+  const genderMale = document.getElementById('genderMale');
+  [genderFemale, genderMale].forEach(btn => {
+    if (!btn) return;
+    btn.addEventListener('click', () => {
+      [genderFemale, genderMale].forEach(b => b && b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+  });
+
+  /* --- Avatar Carousel --- */
+  const carousel = document.getElementById('awCarousel');
+  const slides = carousel ? Array.from(carousel.querySelectorAll('.aw-char-slide')) : [];
+  let selectedIdx = 2;
+
+  const charClasses = ['avp-char-c1','avp-char-c2','avp-char-c3','avp-char-c4','avp-char-c5'];
+
+  function updateCarousel() {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle('aw-char-selected', i === selectedIdx);
+    });
+    // Update right pane character
+    const avpChar = document.getElementById('avpCharacter');
+    if (avpChar) {
+      avpChar.className = 'avp-character ' + (charClasses[selectedIdx] || 'avp-char-c3');
+    }
+  }
+
+  slides.forEach((slide, i) => {
+    slide.addEventListener('click', () => {
+      selectedIdx = i;
+      updateCarousel();
+    });
+  });
+
+  const awPrev = document.getElementById('awPrev');
+  const awNext = document.getElementById('awNext');
+
+  if (awPrev) awPrev.addEventListener('click', () => {
+    selectedIdx = (selectedIdx - 1 + slides.length) % slides.length;
+    updateCarousel();
+  });
+
+  if (awNext) awNext.addEventListener('click', () => {
+    selectedIdx = (selectedIdx + 1) % slides.length;
+    updateCarousel();
+  });
+
+  /* --- Deselect All checkbox --- */
+  const awDeselectAll = document.getElementById('awDeselectAll');
+  const awAnimCbs = document.querySelectorAll('.aw-anim-cb');
+
+  if (awDeselectAll) {
+    awDeselectAll.addEventListener('change', () => {
+      awAnimCbs.forEach(cb => { cb.checked = awDeselectAll.checked; });
+    });
+    awAnimCbs.forEach(cb => {
+      cb.addEventListener('change', () => {
+        awDeselectAll.checked = [...awAnimCbs].every(c => c.checked);
+      });
+    });
+  }
+
+  /* --- Character Position live update --- */
+  const awCharPosition = document.getElementById('awCharPosition');
+  const avpCharWrap = document.getElementById('avpCharWrap');
+  const rpAvatarPreview = document.getElementById('rpAvatarPreview');
+  if (awCharPosition) {
+    awCharPosition.addEventListener('change', () => {
+      const val = awCharPosition.value;
+      if (!avpCharWrap) return;
+      avpCharWrap.classList.toggle('pos-right', val === 'Right');
+      if (rpAvatarPreview) rpAvatarPreview.classList.toggle('pos-right', val === 'Right');
+    });
+  }
+
+  /* --- Avatar Size live update --- */
+  const awAvatarSize = document.getElementById('awAvatarSize');
+  const avpChar = document.getElementById('avpCharacter');
+  if (awAvatarSize && avpChar) {
+    const observer = new MutationObserver(() => {
+      const sz = parseInt(awAvatarSize.value) || 80;
+      const w = Math.round(sz * 1.3);
+      const h = Math.round(sz * 2.0);
+      avpChar.style.width = w + 'px';
+      avpChar.style.height = h + 'px';
+    });
+    // Watch stepper button clicks
+    document.querySelectorAll('.cw-stepper-btn').forEach(btn => {
+      if (btn.dataset.target === 'awAvatarSize') {
+        btn.addEventListener('click', () => {
+          setTimeout(() => {
+            const sz = parseInt(awAvatarSize.value) || 80;
+            const w = Math.round(sz * 1.3);
+            const h = Math.round(sz * 2.0);
+            if (avpChar) {
+              avpChar.style.width = w + 'px';
+              avpChar.style.height = h + 'px';
+            }
+          }, 10);
+        });
+      }
+    });
+  }
+
+  /* --- Waving animation toggle --- */
+  const avpCharEl = document.getElementById('avpCharacter');
+  if (avpCharEl) {
+    let wavingTimer = null;
+    function startWaving() {
+      avpCharEl.classList.add('anim-waving');
+      wavingTimer = setTimeout(() => avpCharEl.classList.remove('anim-waving'), 3000);
+    }
+    // Start waving after 2 seconds on avatar tab open
+    const avatarTab = document.querySelector('[data-tab="avatar"]');
+    if (avatarTab) {
+      avatarTab.addEventListener('click', () => {
+        setTimeout(startWaving, 2000);
+      });
+    }
+  }
+
+})();
 
 })();
