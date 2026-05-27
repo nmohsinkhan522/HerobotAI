@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Herobot Add Knowledge</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="source/style.css" />
+    <link rel="stylesheet" href="source/teamaccess.css" />
+</head>
+
+<body>
+    <div class="app">
+        <aside class="sidebar">
+            <div class="logo-wrap">
+                <div class="logo" id="logo-big">
+                    <img src="./images/logo.svg" alt="Herobot logo">
+                </div>
+                <div class="logo-icon" id="logo-small">
+                    <img src="./images/Logos/White Icon.png" alt="Herobot logo">
+                </div>
+                <button class="collapse-btn" id="sidebarToggle" aria-label="Collapse sidebar" aria-expanded="true">
+                    <img src="images/arrow-left.svg" />
+                </button>
+            </div>
+
+            <div class="nav-section-top">
+                <div class="nav-title">Build</div>
+                <ul class="sidebar-menu">
+                    <li><a href="#" class="nav-item"><span class="icon"><i><img src="./images/Navigation/addKnowledge.svg" /></i></span><span class="text">Add Knowledge</span></a></li>
+                    <li><a href="#" class="nav-item"><span class="icon"><i><img src="./images/Navigation/reviewAndTest.svg" /></i></span><span class="text">Review &amp; Test</span></a></li>
+                    <li><a href="#" class="nav-item"><span class="icon"><i><img src="./images/Navigation/Behaviour.svg" /></i></span><span class="text">Behaviour</span></a></li>
+                    <li><a href="#" class="nav-item"><span class="icon"><i><img src="./images/Navigation/Design.svg" /></i></span><span class="text">Design</span></a></li>
+                </ul>
+            </div>
+
+            <div class="nav-section">
+                <div class="nav-title">Connect</div>
+                <ul class="sidebar-menu">
+                    <li><a href="#" class="nav-item"><span class="icon"><i><img src="./images/Navigation/Workflows.svg" /></i></span><span class="text">Workflows</span></a></li>
+                    <li><a href="#" class="nav-item"><span class="icon"><i><img src="./images/Navigation/Integrations.svg" /></i></span><span class="text">Integrations</span></a></li>
+                </ul>
+            </div>
+
+            <div class="nav-section">
+                <div class="nav-title">Track</div>
+                <ul class="sidebar-menu">
+                    <li><a href="#" class="nav-item"><span class="icon"><i><img src="./images/Navigation/Analytics.svg" /></i></span><span class="text">Analytics</span></a></li>
+                    <li><a href="#" class="nav-item"><span class="icon"><i><img src="./images/Navigation/Conversation.svg" /></i></span><span class="text">Conversation</span></a></li>
+                    <li><a href="#" class="nav-item"><span class="icon"><i><img src="./images/Navigation/usageOverview.svg" /></i></span><span class="text">Usage Overview</span></a></li>
+                </ul>
+            </div>
+
+            <div class="nav-section">
+                <div class="nav-title">Manage</div>
+                <ul class="sidebar-menu">
+                    <li><a href="#" class="nav-item active"><span class="icon"><i><img src="./images/Navigation/team.svg" /></i></span><span class="text">Team Access</span></a></li>
+                    <li><a href="#" class="nav-item"><span class="icon"><i><img src="./images/Navigation/accountSettings.svg" /></i></span><span class="text">Account Settings</span></a></li>
+                    <li><a href="#" class="nav-item"><span class="icon"><i><img src="./images/Navigation/Billing.svg" /></i></span><span class="text">Billing</span></a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <main class="main">
+            <header class="topbar">
+                <div class="topbar-left">
+                    <div class="bot-selector">
+                        <div class="leftIconLogo">
+                        <img src="images/logo-icon.svg"/>
+                        <span>XYZ Company</span>
+                        </div>
+                        <div class="rightIconselect">
+                        <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                        </div>
+                    </div>
+                </div>
+                <span class="topbar-divider"></span>
+                <span class="top-icon">
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#848484" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="6"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </span>
+                <span class="topbar-divider"></span>
+                <div class="avatar-menu" id="avatarMenu">
+                    <button class="avatar-trigger" id="avatarToggle" aria-label="Open user menu" aria-expanded="false" aria-haspopup="true">
+                        <div class="avatar" aria-hidden="true"><img src="images/user.svg" alt="user" /></div>
+                        <i class="bi bi-chevron-down top-icon"></i>
+                    </button>
+                    <div class="avatar-dropdown" id="avatarDropdown">
+                        <a class="dropdown-item" href="#"><span><i class="bi bi-person"></i></span><span>My Profile</span></a>
+                        <a class="dropdown-item" href="#"><span><i class="bi bi-gear"></i></span><span>Account Settings</span></a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#"><span><i class="bi bi-box-arrow-right"></i></span><span>Logout</span></a>
+                    </div>
+                </div>
+            </header>
+
+            <section class="workspace review-section team-access-body">
+                <a class="team-access-skip-link" href="#team-access-main">Skip to content</a>
+
+                <main id="team-access-main" class="team-access-page">
+                    <section class="team-access-shell" aria-labelledby="team-access-page-title">
+                    <header class="team-access-page-header">
+                        <h1 id="team-access-page-title" class="team-access-page-title">MEMBERS</h1>
+                    </header>
+
+                    <section class="team-access-card team-access-manage-card" aria-labelledby="team-access-manage-title">
+                        <div class="team-access-card-header">
+                        <h2 id="team-access-manage-title" class="team-access-section-title">Manage</h2>
+                        </div>
+
+                        <div class="team-access-table-wrap" role="region" aria-label="Team members table">
+                        <table class="team-access-table">
+                            <thead>
+                            <tr>
+                                <th scope="col">User</th>
+                                <th scope="col">Email ID</th>
+                                <th scope="col">Member since</th>
+                                <th scope="col">Role</th>
+                                <th scope="col">Status</th>
+                                <th scope="col" class="team-access-table-action-head">Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td class="team-access-user-cell">John Doe</td>
+                                <td class="team-access-user-cell">xyzworkspace@xyz.com</td>
+                                <td>Mar 09, 2026</td>
+                                <td>Owner</td>
+                                <td>Active</td>
+                                <td class="team-access-table-action-cell">
+                                <button
+                                    type="button"
+                                    class="team-access-icon-button team-access-action-trigger"
+                                    aria-label="Open member actions"
+                                    data-team-access-menu-button
+                                >
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </button>
+
+                                <div class="team-access-menu" data-team-access-menu hidden>
+                                    <button type="button" class="team-access-menu-item">Edit member</button>
+                                    <button type="button" class="team-access-menu-item">Change role</button>
+                                    <button type="button" class="team-access-menu-item">Remove access</button>
+                                </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        </div>
+
+                        <div class="team-access-manage-footer">
+                        <button type="button" class="team-access-button team-access-button--mint">
+                            Invite members
+                        </button>
+                        </div>
+                    </section>
+
+                    <section class="team-access-roles" aria-labelledby="team-access-roles-title">
+                        <header class="team-access-roles-header">
+                        <h2 id="team-access-roles-title" class="team-access-roles-title">Roles and permissions</h2>
+                        </header>
+
+                        <div class="team-access-role-list">
+                        <article class="team-access-role-item">
+                            <div class="team-access-role-top">
+                            <div class="team-access-role-title-wrap">
+                                <div class="team-access-role-icon team-access-role-icon--owner" aria-hidden="true">
+                                    <img src="images/crown.svg" />
+                                </div>
+                                <h3 class="team-access-role-name">Owner</h3>
+                            </div>
+                            <span class="team-access-count-pill">1 member</span>
+                            </div>
+
+                            <p class="team-access-role-description">
+                            Full access to all resources and settings, including billing and team management.
+                            </p>
+
+                            <ul class="team-access-tag-list" role="list">
+                            <li class="team-access-tag">Everything · Full access</li>
+                            </ul>
+                        </article>
+
+                        <article class="team-access-role-item">
+                            <div class="team-access-role-top">
+                            <div class="team-access-role-title-wrap">
+                                <div class="team-access-role-icon team-access-role-icon--member" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none">
+                                    <circle cx="12" cy="8" r="3.1" stroke="currentColor" stroke-width="1.6"/>
+                                    <path d="M6.8 18.2a5.2 5.2 0 0 1 10.4 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                                </svg>
+                                </div>
+                                <h3 class="team-access-role-name">Member</h3>
+                            </div>
+                            <span class="team-access-count-pill">0 members</span>
+                            </div>
+
+                            <p class="team-access-role-description">
+                            Access to core features and resources, but cannot manage team or billing settings.
+                            </p>
+
+                            <ul class="team-access-tag-list" role="list">
+                                <li class="team-access-tag">Actions · Full access</li>
+                                <li class="team-access-tag">Webhooks · Full access</li>
+                                <li class="team-access-tag">Analytics · Full access</li>
+                                <li class="team-access-tag">Sources · Full access</li>
+                                <li class="team-access-tag">Api Keys · Full access</li>
+                                <li class="team-access-tag">Leads · Full access</li>
+                                <li class="team-access-tag">Chatlogs · Full access</li>
+                                <li class="team-access-tag">Integrations · Full access</li>
+                                <li class="team-access-tag">Contacts · Full access</li>
+                                <li class="team-access-tag">Sources · Full access</li>
+                                <li class="team-access-tag">Agents · Full access</li>
+                                <li class="team-access-tag">Billing · View</li>
+                                <li class="team-access-tag">Members · View</li>
+                            </ul>
+                        </article>
+
+                        <article class="team-access-role-item">
+                            <div class="team-access-role-top">
+                            <div class="team-access-role-title-wrap">
+                                <div class="team-access-role-icon team-access-role-icon--support" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none">
+                                    <path d="M5.5 12.5a6.5 6.5 0 1 1 13 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                                    <rect x="4.4" y="12" width="3.6" height="5.4" rx="1.6" stroke="currentColor" stroke-width="1.6"/>
+                                    <rect x="16" y="12" width="3.6" height="5.4" rx="1.6" stroke="currentColor" stroke-width="1.6"/>
+                                    <path d="M12 18.6h2.2a1.3 1.3 0 0 1 0 2.6H12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                                </svg>
+                                </div>
+                                <h3 class="team-access-role-name">Support Associate</h3>
+                            </div>
+                            <span class="team-access-count-pill">0 members</span>
+                            </div>
+
+                            <p class="team-access-role-description">
+                            Helpdesk support agent. Coming Soon.
+                            </p>
+                        </article>
+
+                        <article class="team-access-role-item">
+                            <div class="team-access-role-top">
+                            <div class="team-access-role-title-wrap">
+                                <div class="team-access-role-icon team-access-role-icon--viewer" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none">
+                                    <path d="M2.8 12s3.2-5.2 9.2-5.2 9.2 5.2 9.2 5.2-3.2 5.2-9.2 5.2S2.8 12 2.8 12Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                                    <circle cx="12" cy="12" r="2.2" stroke="currentColor" stroke-width="1.6"/>
+                                </svg>
+                                </div>
+                                <h3 class="team-access-role-name">Viewer</h3>
+                            </div>
+                            <span class="team-access-count-pill">0 member</span>
+                            </div>
+
+                            <p class="team-access-role-description">
+                            Read-only access to view resources and analytics, but cannot make any changes.
+                            </p>
+
+                            <ul class="team-access-tag-list" role="list">
+                            <li class="team-access-tag">Everything · View</li>
+                            </ul>
+                        </article>
+                        </div>
+
+                        <aside class="team-access-upgrade-banner" aria-label="Upgrade prompt">
+                        <div class="team-access-upgrade-copy">
+                            <div class="team-access-upgrade-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <rect x="5" y="10" width="14" height="10" rx="3" stroke="currentColor" stroke-width="1.7"/>
+                                <path d="M8 10V8.4A4 4 0 0 1 12 4.5a4 4 0 0 1 4 3.9V10" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+                            </svg>
+                            </div>
+
+                            <div>
+                            <h3 class="team-access-upgrade-title">Unlock</h3>
+                            <p class="team-access-upgrade-text">Upgrade to access to features.</p>
+                            </div>
+                        </div>
+
+                        <button type="button" class="team-access-button team-access-button--gradient">
+                            Upgrade to enterprise
+                        </button>
+                        </aside>
+                    </section>
+                    </section>
+                </main>
+            </section>
+
+            <footer class="footer">
+                <span>Powered by Herobot Studio</span>
+                <span>Privacy Policy &nbsp; &nbsp; &nbsp; © 2026 AlphaBOT Studio</span>
+            </footer>
+        </main>
+    </div>
+
+    <!-- Modal: always present in DOM, hidden via CSS class -->
+    <div class="overlay" id="overlay">
+        <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <div class="top">
+                <div>
+                    <h2 id="modalTitle">Add Documents</h2>
+                    <p class="subtitle">If you are uploading a PDF, make sure you can select/highlight the text.</p>
+                </div>
+                <button class="close" id="closeBtn" aria-label="Close"><img src="images/CloseIcon.svg"></button>
+            </div>
+
+            <input id="fileInput" type="file" multiple accept=".pdf,.doc,.docx,.svg,.png,.jpg,.jpeg,.gif" />
+
+            <div class="dropzone" id="dropzone">
+                <div class="drop-inner" id="uploadLink">
+                    <div class="icon-wrap" aria-hidden="true">
+                        <i><img src="images/upload-icon.svg" /></i>
+                    </div>
+                    <p class="upload-text"><span class="upload-link">Click to upload</span> or drag and drop</p>
+                    <div class="formats">PDF, DOC, DOCX, SVG, PNG, JPG or GIF (max. 800×400px)</div>
+                </div>
+            </div>
+
+            <div class="file-list" id="fileList"></div>
+
+            <div class="progress-wrap" id="progressWrap">
+                <div class="progress-label"><span>Uploading</span><span id="progressPct">0%</span></div>
+                <div class="bar"><span id="progressBar"></span></div>
+            </div>
+
+            <div class="success" id="successMsg">Upload completed successfully.</div>
+
+            <div class="actions">
+                <button class="btn cancel" id="cancelBtn">CANCEL</button>
+                <button class="btn upload" id="uploadBtn">UPLOAD</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS files loaded at end of body -->  
+        <script src="source/javascript.js"></script>
+        <script src="source/teamaccess.js"></script>
+    <!-- JS files loaded at end of body -->
+
+</body>
+
+</html>
