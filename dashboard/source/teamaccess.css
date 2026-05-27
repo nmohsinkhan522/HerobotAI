@@ -100,7 +100,7 @@ button {
 }
 
 .team-access-shell {
-  width: min(100%, 1120px);
+  width: 100%;
   margin-inline: auto;
   /* background: var(--team-access-surface);
   border: 1px solid var(--team-access-border); */
