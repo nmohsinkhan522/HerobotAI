@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Herobot Add Knowledge</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="source/style.css" />
+    <link rel="stylesheet" href="source/billing.css" />
+</head>
+
+<body>
+    <div class="app">
+        <aside class="sidebar">
+            <div class="logo-wrap">
+                <div class="logo" id="logo-big">
+                    <img src="./images/logo.svg" alt="Herobot logo">
+                </div>
+                <div class="logo-icon" id="logo-small">
+                    <img src="./images/Logos/White Icon.png" alt="Herobot logo">
+                </div>
+                <button class="collapse-btn" id="sidebarToggle" aria-label="Collapse sidebar" aria-expanded="true">
+                    <img src="images/arrow-left.svg" />
+                </button>
+            </div>
+
+            <div class="nav-section-top">
+                <div class="nav-title">Build</div>
+                <ul class="sidebar-menu">
+                    <li><a href="#" class="nav-item"><span class="icon"><i><img src="./images/Navigation/addKnowledge.svg" /></i></span><span class="text">Add Knowledge</span></a></li>
+                    <li><a href="#" class="nav-item"><span class="icon"><i><img src="./images/Navigation/reviewAndTest.svg" /></i></span><span class="text">Review &amp; Test</span></a></li>
+                    <li><a href="#" class="nav-item"><span class="icon"><i><img src="./images/Navigation/Behaviour.svg" /></i></span><span class="text">Behaviour</span></a></li>
+                    <li><a href="#" class="nav-item"><span class="icon"><i><img src="./images/Navigation/Design.svg" /></i></span><span class="text">Design</span></a></li>
+                </ul>
+            </div>
+
+            <div class="nav-section">
+                <div class="nav-title">Connect</div>
+                <ul class="sidebar-menu">
+                    <li><a href="#" class="nav-item"><span class="icon"><i><img src="./images/Navigation/Workflows.svg" /></i></span><span class="text">Workflows</span></a></li>
+                    <li><a href="#" class="nav-item"><span class="icon"><i><img src="./images/Navigation/Integrations.svg" /></i></span><span class="text">Integrations</span></a></li>
+                </ul>
+            </div>
+
+            <div class="nav-section">
+                <div class="nav-title">Track</div>
+                <ul class="sidebar-menu">
+                    <li><a href="#" class="nav-item"><span class="icon"><i><img src="./images/Navigation/Analytics.svg" /></i></span><span class="text">Analytics</span></a></li>
+                    <li><a href="#" class="nav-item"><span class="icon"><i><img src="./images/Navigation/Conversation.svg" /></i></span><span class="text">Conversation</span></a></li>
+                    <li><a href="#" class="nav-item"><span class="icon"><i><img src="./images/Navigation/usageOverview.svg" /></i></span><span class="text">Usage Overview</span></a></li>
+                </ul>
+            </div>
+
+            <div class="nav-section">
+                <div class="nav-title">Manage</div>
+                <ul class="sidebar-menu">
+                    <li><a href="#" class="nav-item active"><span class="icon"><i><img src="./images/Navigation/team.svg" /></i></span><span class="text">Team Access</span></a></li>
+                    <li><a href="#" class="nav-item"><span class="icon"><i><img src="./images/Navigation/accountSettings.svg" /></i></span><span class="text">Account Settings</span></a></li>
+                    <li><a href="#" class="nav-item"><span class="icon"><i><img src="./images/Navigation/Billing.svg" /></i></span><span class="text">Billing</span></a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <main class="main">
+            <header class="topbar">
+                <div class="topbar-left">
+                    <div class="bot-selector">
+                        <div class="leftIconLogo">
+                        <img src="images/logo-icon.svg"/>
+                        <span>XYZ Company</span>
+                        </div>
+                        <div class="rightIconselect">
+                        <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                        </div>
+                    </div>
+                </div>
+                <span class="topbar-divider"></span>
+                <span class="top-icon">
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#848484" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="6"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </span>
+                <span class="topbar-divider"></span>
+                <div class="avatar-menu" id="avatarMenu">
+                    <button class="avatar-trigger" id="avatarToggle" aria-label="Open user menu" aria-expanded="false" aria-haspopup="true">
+                        <div class="avatar" aria-hidden="true"><img src="images/user.svg" alt="user" /></div>
+                        <i class="bi bi-chevron-down top-icon"></i>
+                    </button>
+                    <div class="avatar-dropdown" id="avatarDropdown">
+                        <a class="dropdown-item" href="#"><span><i class="bi bi-person"></i></span><span>My Profile</span></a>
+                        <a class="dropdown-item" href="#"><span><i class="bi bi-gear"></i></span><span>Account Settings</span></a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#"><span><i class="bi bi-box-arrow-right"></i></span><span>Logout</span></a>
+                    </div>
+                </div>
+            </header>
+
+            <section class="workspace">
+                <main id="plan-selection-main" class="plan-selection-page">
+                    <section class="plan-selection-hero" aria-labelledby="plan-selection-heading">
+                    <div class="plan-selection-hero-icon-wrap" aria-hidden="true">
+                        <img src="images/icon-wallet.svg" alt="wallet" />
+                    </div>
+
+                    <h1 id="plan-selection-heading" class="plan-selection-hero-title">No Active Plan</h1>
+                    <p class="plan-selection-hero-text">
+                        Your workspace is currently on standby. Choose a plan below to unlock the full power of Nexus AI and start building.
+                    </p>
+                    </section>
+
+                    <div class="plan-selection-divider" aria-hidden="true"></div>
+
+                    <section class="plan-selection-pricing" aria-label="Pricing plans">
+                    <div class="plan-selection-grid">
+                        <article class="plan-selection-card">
+                        <header>
+                            <p class="plan-selection-plan-label">Essential</p>
+                            <h2 class="plan-selection-plan-name">Free</h2>
+                            <p class="plan-selection-plan-description">
+                            For individuals and small side projects.
+                            </p>
+                        </header>
+
+                        <div class="plan-selection-price-row" aria-label="Price 0 dollars per month">
+                            <span class="plan-selection-price">$0</span>
+                            <span class="plan-selection-period">/ month</span>
+                        </div>
+
+                        <ul class="plan-selection-feature-list" role="list">
+                            <li class="plan-selection-feature-item">
+                            <svg class="plan-selection-feature-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                                <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.8"/>
+                                <path d="M6.2 10.2 8.6 12.6 13.8 7.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Up to 1 projects</span>
+                            </li>
+                            <li class="plan-selection-feature-item">
+                            <svg class="plan-selection-feature-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                                <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.8"/>
+                                <path d="M6.2 10.2 8.6 12.6 13.8 7.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Basic AI processing</span>
+                            </li>
+                            <li class="plan-selection-feature-item">
+                            <svg class="plan-selection-feature-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                                <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.8"/>
+                                <path d="M6.2 10.2 8.6 12.6 13.8 7.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Community support</span>
+                            </li>
+                        </ul>
+
+                        <div class="plan-selection-card-footer">
+                            <button type="button" class="plan-selection-button plan-selection-button--muted">
+                            Current status
+                            </button>
+                        </div>
+                        </article>
+
+                        <article class="plan-selection-card plan-selection-card--featured">
+                        <div class="plan-selection-card-badge">Most Popular</div>
+
+                        <header>
+                            <p class="plan-selection-plan-label">Professional</p>
+                            <h2 class="plan-selection-plan-name">Standard</h2>
+                            <p class="plan-selection-plan-description">
+                            Scale your productivity with advanced tools.
+                            </p>
+                        </header>
+
+                        <div class="plan-selection-price-row" aria-label="Price 49 dollars per month">
+                            <span class="plan-selection-price">$49</span>
+                            <span class="plan-selection-period">/ month</span>
+                        </div>
+
+                        <ul class="plan-selection-feature-list" role="list">
+                            <li class="plan-selection-feature-item">
+                            <svg class="plan-selection-feature-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                                <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.8"/>
+                                <path d="M6.2 10.2 8.6 12.6 13.8 7.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Unlimited projects</span>
+                            </li>
+                            <li class="plan-selection-feature-item">
+                            <svg class="plan-selection-feature-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                                <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.8"/>
+                                <path d="M6.2 10.2 8.6 12.6 13.8 7.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Advanced Neural Models</span>
+                            </li>
+                            <li class="plan-selection-feature-item">
+                            <svg class="plan-selection-feature-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                                <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.8"/>
+                                <path d="M6.2 10.2 8.6 12.6 13.8 7.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Priority email support</span>
+                            </li>
+                            <li class="plan-selection-feature-item">
+                            <svg class="plan-selection-feature-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                                <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.8"/>
+                                <path d="M6.2 10.2 8.6 12.6 13.8 7.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>API Access</span>
+                            </li>
+                        </ul>
+
+                        <div class="plan-selection-card-footer">
+                            <button type="button" class="plan-selection-button plan-selection-button--primary">
+                            Start free trial
+                            </button>
+                        </div>
+                        </article>
+
+                        <article class="plan-selection-card">
+                        <header>
+                            <p class="plan-selection-plan-label">Corporate</p>
+                            <h2 class="plan-selection-plan-name">Enterprise</h2>
+                            <p class="plan-selection-plan-description">
+                            Custom security and dedicated resources.
+                            </p>
+                        </header>
+
+                        <div class="plan-selection-price-row" aria-label="Price 199 dollars per month">
+                            <span class="plan-selection-price">$199</span>
+                            <span class="plan-selection-period">/ month</span>
+                        </div>
+
+                        <ul class="plan-selection-feature-list" role="list">
+                            <li class="plan-selection-feature-item">
+                            <svg class="plan-selection-feature-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                                <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.8"/>
+                                <path d="M6.2 10.2 8.6 12.6 13.8 7.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>SSO &amp; SAML Security</span>
+                            </li>
+                            <li class="plan-selection-feature-item">
+                            <svg class="plan-selection-feature-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                                <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.8"/>
+                                <path d="M6.2 10.2 8.6 12.6 13.8 7.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Custom model training</span>
+                            </li>
+                            <li class="plan-selection-feature-item">
+                            <svg class="plan-selection-feature-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                                <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.8"/>
+                                <path d="M6.2 10.2 8.6 12.6 13.8 7.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Dedicated account manager</span>
+                            </li>
+                        </ul>
+
+                        <div class="plan-selection-card-footer">
+                            <button type="button" class="plan-selection-button plan-selection-button--outline">
+                            Contact sales
+                            </button>
+                        </div>
+                        </article>
+                    </div>
+                    </section>
+
+                    <section class="plan-selection-help" aria-labelledby="plan-selection-help-title">
+                    <div class="plan-selection-help-inner">
+                        <div class="plan-selection-help-content">
+                        <h2 id="plan-selection-help-title" class="plan-selection-help-title">
+                            Questions about our plans?
+                        </h2>
+                        <p class="plan-selection-help-text">
+                            Schedule a 15-minute consultation with our billing specialists to find the right configuration for your team.
+                        </p>
+
+                        <div class="plan-selection-help-actions">
+                            <button
+                            type="button"
+                            class="plan-selection-button plan-selection-button--demo"
+                            data-plan-selection-demo
+                            >
+                            Book a demo
+                            </button>
+                        </div>
+                        </div>
+                    </div>
+                    </section>
+                </main>
+            </section>
+
+            <footer class="footer">
+                <span>Powered by Herobot Studio</span>
+                <span>Privacy Policy &nbsp; &nbsp; &nbsp; © 2026 AlphaBOT Studio</span>
+            </footer>
+        </main>
+    </div>
+
+    <!-- Modal: always present in DOM, hidden via CSS class -->
+    <div class="overlay" id="overlay">
+        <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <div class="top">
+                <div>
+                    <h2 id="modalTitle">Add Documents</h2>
+                    <p class="subtitle">If you are uploading a PDF, make sure you can select/highlight the text.</p>
+                </div>
+                <button class="close" id="closeBtn" aria-label="Close"><img src="images/CloseIcon.svg"></button>
+            </div>
+
+            <input id="fileInput" type="file" multiple accept=".pdf,.doc,.docx,.svg,.png,.jpg,.jpeg,.gif" />
+
+            <div class="dropzone" id="dropzone">
+                <div class="drop-inner" id="uploadLink">
+                    <div class="icon-wrap" aria-hidden="true">
+                        <i><img src="images/upload-icon.svg" /></i>
+                    </div>
+                    <p class="upload-text"><span class="upload-link">Click to upload</span> or drag and drop</p>
+                    <div class="formats">PDF, DOC, DOCX, SVG, PNG, JPG or GIF (max. 800×400px)</div>
+                </div>
+            </div>
+
+            <div class="file-list" id="fileList"></div>
+
+            <div class="progress-wrap" id="progressWrap">
+                <div class="progress-label"><span>Uploading</span><span id="progressPct">0%</span></div>
+                <div class="bar"><span id="progressBar"></span></div>
+            </div>
+
+            <div class="success" id="successMsg">Upload completed successfully.</div>
+
+            <div class="actions">
+                <button class="btn cancel" id="cancelBtn">CANCEL</button>
+                <button class="btn upload" id="uploadBtn">UPLOAD</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS files loaded at end of body -->  
+        <script src="source/javascript.js"></script>
+        <script src="source/billing.js"></script>
+    <!-- JS files loaded at end of body -->
+
+</body>
+
+</html>
